@@ -1,0 +1,136 @@
+[
+  {
+    "id": "givati",
+    "label": "חטיבת גבעתי",
+    "children": [
+      {
+        "id": "gdud-shaked",
+        "label": "גדוד שקד",
+        "children": [
+          {
+            "id": "plugat-alef",
+            "label": "פלוגה א'",
+            "children": [
+              {
+                "id": "mahlaka-1",
+                "label": "מחלקה 1",
+                "children": [
+                  { "id": "kita-11", "label": "כיתה 11" },
+                  { "id": "kita-12", "label": "כיתה 12" },
+                  { "id": "kita-13", "label": "כיתה 13" }
+                ]
+              },
+              {
+                "id": "mahlaka-2",
+                "label": "מחלקה 2",
+                "children": [
+                  { "id": "kita-21", "label": "כיתה 21" },
+                  { "id": "kita-22", "label": "כיתה 22" }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "plugat-bet",
+            "label": "פלוגה ב'",
+            "children": [
+              {
+                "id": "mahlaka-3",
+                "label": "מחלקה 3",
+                "children": [
+                  { "id": "kita-31", "label": "כיתה 31" },
+                  { "id": "kita-32", "label": "כיתה 32" }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "plugat-gimel",
+            "label": "פלוגה ג'",
+            "children": [
+              {
+                "id": "mahlaka-4",
+                "label": "מחלקה 4",
+                "children": [
+                  { "id": "kita-41", "label": "כיתה 41" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gdud-tzabar",
+        "label": "גדוד צבר",
+        "children": [
+          {
+            "id": "plugat-dalet",
+            "label": "פלוגה ד'",
+            "children": [
+              {
+                "id": "mahlaka-5",
+                "label": "מחלקה 5",
+                "children": [
+                  { "id": "kita-51", "label": "כיתה 51" },
+                  { "id": "kita-52", "label": "כיתה 52" }
+                ]
+              }
+            ]
+          },
+          {
+            "id": "plugat-heh",
+            "label": "פלוגה ה'",
+            "children": [
+              {
+                "id": "mahlaka-6",
+                "label": "מחלקה 6",
+                "children": [
+                  { "id": "kita-61", "label": "כיתה 61" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gdud-rotem",
+        "label": "גדוד רותם",
+        "children": [
+          {
+            "id": "plugat-vav",
+            "label": "פלוגה ו'",
+            "children": [
+              {
+                "id": "mahlaka-7",
+                "label": "מחלקה 7",
+                "children": [
+                  { "id": "kita-71", "label": "כיתה 71" },
+                  { "id": "kita-72", "label": "כיתה 72" }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "gdud-orev",
+        "label": "גדוד עורב",
+        "children": [
+          {
+            "id": "plugat-zayin",
+            "label": "פלוגה ז'",
+            "children": [
+              {
+                "id": "mahlaka-8",
+                "label": "מחלקה 8",
+                "children": [
+                  { "id": "kita-81", "label": "כיתה 81" }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

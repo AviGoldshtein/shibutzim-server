@@ -1,0 +1,6 @@
+[
+  { "name": "עלות אימונים", "amount": 1000000, "percentage": 29 },
+  { "name": "כמות אימונים", "amount": 3000, "percentage": 29 },
+  { "name": "עלות הכשרות", "amount": 3000000, "percentage": -25 },
+  { "name": "כמות הכשרות", "amount": 25, "percentage": 23 }
+]

@@ -1,0 +1,17 @@
+[
+  { "name": "חיל רגלים", "amount": 30000000, "percentage": -5 },
+  { "name": "תחמושת", "amount": 7000000, "percentage": -12 },
+  { "name": "דלק", "amount": 1500000, "percentage": 8 },
+  { "name": "חיל רגלים", "amount": 30000, "percentage": -5 },
+  { "name": "שריון", "amount": 4000, "percentage": 10 },
+  { "name": "חיל רגלים", "amount": 3, "percentage": -5 },
+  { "name": "שריון", "amount": 4000, "percentage": 10 },
+  { "name": "חיל רגלים", "amount": 3, "percentage": -5 },
+  { "name": "שריון", "amount": 400000, "percentage": 10 },
+  { "name": "תחמושת", "amount": 70000, "percentage": -12 },
+  { "name": "דלק", "amount": 15000, "percentage": 8 },
+  { "name": "חיל רגלים", "amount": 3, "percentage": -5 },
+  { "name": "דלק", "amount": 1500, "percentage": 8 },
+  { "name": "חיל רגלים", "amount": 30000, "percentage": -5 },
+  { "name": "שריון", "amount": 4000, "percentage": 10 }
+]
