@@ -7,7 +7,7 @@ export class RequestLoggerMiddleware implements NestMiddleware {
     const { method, originalUrl, query, body } = req;
 
     console.log("📥 Incoming Request:");
-    console.log(`➡️ ${method} ${originalUrl}`);
+    console.log(`➡️  ${method} ${originalUrl}`);
 
     if (Object.keys(query).length) {
       console.log("🔹 Query:", query);

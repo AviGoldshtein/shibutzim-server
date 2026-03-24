@@ -1,257 +1,223 @@
 {
-  "unit": "גבעתי",
-  "period": {
-    "start": "2026-02-01",
-    "end": "2026-12-31"
-  },
-  "gdudim": [
+  "shibutzim": [
     {
-      "name": "גדוד 888",
-      "forceType": "עורף",
-      "pikud": "מפקדת חטיבה 84",
-      "shibutsim": [
+      "title": "תדיר 82 תורן",
+      "codeShibutz": "12345678",
+      "directCost": 10000,
+      "costOfItems": 5000,
+      "mesima": "קורס מ”כים חי”ר",
+      "serviceType": "מילואים- אימונים",
+      "variationPastYear": -25,
+      "dateBegin": "2026-01-10",
+      "dateEnd": "2026-01-12",
+      "unitId": "givati",
+      "resources": [
         {
-          "title": "תדיר 82 תורן",
-          "codeShibuts": "12345678",
-          "directCost": 10000,
-          "costOfItems": 5000,
-          "mesima": "קורס מ”כים חי”ר",
-          "serviceType": "מילואים- אימונים",
-          "variationPastYear": -25,
-          "dateBegin": "2026-01-10",
-          "dateEnd": "2026-01-12",
-          "resources": [
-            {
-              "categoryName": "תחמושת",
-              "items": [
-                { "name": "כד’ 5.56 מ”מ לאימונים", "quantity": 1200, "unitCost": 1.5 },
-                { "name": "כד’ 5.56 מ”מ", "quantity": 300, "unitCost": 5 },
-                { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
-                { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 }
-              ]
-            },
-            {
-              "categoryName": "לוגיסטיקה",
-              "items": [
-                { "name": "מנות קרב", "quantity": 600, "unitCost": 18 },
-                { "name": "מים מינרליים (ליטר)", "quantity": 2400, "unitCost": 1.2 }
-              ]
-            },
-            {
-              "categoryName": "רפואה",
-              "items": [
-                { "name": "ערכות עזרה ראשונה", "quantity": 60, "unitCost": 35 },
-                { "name": "חומרי חיטוי", "quantity": 40, "unitCost": 12 }
-              ]
-            },
-            {
-              "categoryName": "תקשוב",
-              "items": [
-                { "name": "מכשירי קשר", "quantity": 25, "unitCost": 450 },
-                { "name": "סוללות גיבוי", "quantity": 100, "unitCost": 15 }
-              ]
-            }
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ לאימונים", "quantity": 1200, "unitCost": 1.5 },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 300, "unitCost": 5 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 }
           ]
         },
         {
-          "title": "אימון הקמה",
-          "codeShibuts": "12345679",
-          "directCost": 15000,
-          "costOfItems": 6000,
-          "mesima": "אימון הקמה גדודי",
-          "serviceType": "מילואים- אימונים",
-          "variationPastYear": 5,
-          "dateBegin": "2026-03-01",
-          "dateEnd": "2026-03-10",
-          "resources": [
-            {
-              "categoryName": "ציוד אישי",
-              "items": [
-                { "name": "אפודים", "quantity": 200, "unitCost": 120 },
-                { "name": "קסדות", "quantity": 200, "unitCost": 90 }
-              ]
-            },
-            {
-              "categoryName": "תחבורה",
-              "items": [
-                { "name": "אוטובוסים", "quantity": 10, "unitCost": 1500 },
-                { "name": "משאיות לוגיסטיות", "quantity": 4, "unitCost": 3200 }
-              ]
-            },
-            {
-              "categoryName": "הדרכה",
-              "items": [
-                { "name": "חוברות אימון", "quantity": 300, "unitCost": 12 },
-                { "name": "לוחות תכנון", "quantity": 20, "unitCost": 80 }
-              ]
-            },
-            {
-              "categoryName": "תחזוקה",
-              "items": [
-                { "name": "כלי עבודה", "quantity": 15, "unitCost": 250 },
-                { "name": "חלקי חילוף כלליים", "quantity": 50, "unitCost": 60 }
-              ]
-            }
+          "categoryName": "לוגיסטיקה",
+          "items": [
+            { "name": "מנות קרב", "quantity": 600, "unitCost": 18 },
+            { "name": "מים מינרליים (ליטר)", "quantity": 2400, "unitCost": 1.2 }
+          ]
+        },
+        {
+          "categoryName": "רפואה",
+          "items": [
+            { "name": "ערכות עזרה ראשונה", "quantity": 60, "unitCost": 35 },
+            { "name": "חומרי חיטוי", "quantity": 40, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "תקשוב",
+          "items": [
+            { "name": "מכשירי קשר", "quantity": 25, "unitCost": 450 },
+            { "name": "סוללות גיבוי", "quantity": 100, "unitCost": 15 }
           ]
         }
       ]
     },
     {
-      "name": "גדוד 100",
-      "forceType": "חש\"ן",
-      "pikud": "מפקדת חטיבה 84",
-      "shibutsim": [
+      "title": "אימון הקמה",
+      "codeShibutz": "12345679",
+      "directCost": 15000,
+      "costOfItems": 6000,
+      "mesima": "אימון הקמה גדודי",
+      "serviceType": "מילואים- אימונים",
+      "variationPastYear": 5,
+      "dateBegin": "2026-03-01",
+      "dateEnd": "2026-03-10",
+      "unitId": "gdud-tzabar",
+      "resources": [
         {
-          "title": "טירונות פלוגה א'",
-          "codeShibuts": "23456789",
-          "directCost": 18000,
-          "costOfItems": 7200,
-          "mesima": "טירונות לוחמים",
-          "serviceType": "סדיר- אימונים",
-          "variationPastYear": 10,
-          "dateBegin": "2026-02-01",
-          "dateEnd": "2026-03-15",
-          "resources": [
-            {
-              "categoryName": "הדרכה",
-              "items": [
-                { "name": "חוברות אימון", "quantity": 300, "unitCost": 12 },
-                { "name": "ציוד מטווחים", "quantity": 1, "unitCost": 4500 }
-              ]
-            },
-            {
-              "categoryName": "רפואה",
-              "items": [
-                { "name": "ערכות עזרה ראשונה", "quantity": 120, "unitCost": 35 },
-                { "name": "תחבושות אישיות", "quantity": 300, "unitCost": 8 }
-              ]
-            },
-            {
-              "categoryName": "לוגיסטיקה",
-              "items": [
-                { "name": "שקי שינה", "quantity": 280, "unitCost": 95 },
-                { "name": "מזרנים", "quantity": 280, "unitCost": 70 }
-              ]
-            },
-            {
-              "categoryName": "אבטחה",
-              "items": [
-                { "name": "אמצעי תאורה", "quantity": 40, "unitCost": 90 },
-                { "name": "גדרות זמניות", "quantity": 200, "unitCost": 25 }
-              ]
-            }
+          "categoryName": "ציוד אישי",
+          "items": [
+            { "name": "אפודים", "quantity": 200, "unitCost": 120 },
+            { "name": "קסדות", "quantity": 200, "unitCost": 90 }
+          ]
+        },
+        {
+          "categoryName": "תחבורה",
+          "items": [
+            { "name": "אוטובוסים", "quantity": 10, "unitCost": 1500 },
+            { "name": "משאיות לוגיסטיות", "quantity": 4, "unitCost": 3200 }
+          ]
+        },
+        {
+          "categoryName": "הדרכה",
+          "items": [
+            { "name": "חוברות אימון", "quantity": 300, "unitCost": 12 },
+            { "name": "לוחות תכנון", "quantity": 20, "unitCost": 80 }
+          ]
+        },
+        {
+          "categoryName": "תחזוקה",
+          "items": [
+            { "name": "כלי עבודה", "quantity": 15, "unitCost": 250 },
+            { "name": "חלקי חילוף כלליים", "quantity": 50, "unitCost": 60 }
           ]
         }
       ]
     },
     {
-      "name": "גדוד 1",
-      "forceType": "חת\"ם",
-      "pikud": "מפקדת חטיבה 55",
-      "shibutsim": [
+      "title": "טירונות פלוגה א'",
+      "codeShibutz": "23456789",
+      "directCost": 18000,
+      "costOfItems": 7200,
+      "mesima": "טירונות לוחמים",
+      "serviceType": "סדיר- אימונים",
+      "variationPastYear": 10,
+      "dateBegin": "2026-02-01",
+      "dateEnd": "2026-03-15",
+      "unitId": "gdud-rotem",
+      "resources": [
         {
-          "title": "אימון מתקדם",
-          "codeShibuts": "34567890",
-          "directCost": 22000,
-          "costOfItems": 9000,
-          "mesima": "אימון מחלקות",
-          "serviceType": "מילואים- אימונים",
-          "variationPastYear": -5,
-          "dateBegin": "2026-04-05",
-          "dateEnd": "2026-04-20",
-          "resources": [
-            {
-              "categoryName": "תחזוקה",
-              "items": [
-                { "name": "חלקי חילוף לנשק", "quantity": 80, "unitCost": 60 },
-                { "name": "שימון וניקוי", "quantity": 150, "unitCost": 10 }
-              ]
-            },
-            {
-              "categoryName": "תקשוב",
-              "items": [
-                { "name": "נתבים ניידים", "quantity": 6, "unitCost": 850 },
-                { "name": "כבלי תקשורת", "quantity": 120, "unitCost": 6 }
-              ]
-            },
-            {
-              "categoryName": "הדרכה",
-              "items": [
-                { "name": "אמצעי סימולציה", "quantity": 5, "unitCost": 2200 }
-              ]
-            }
+          "categoryName": "הדרכה",
+          "items": [
+            { "name": "חוברות אימון", "quantity": 300, "unitCost": 12 },
+            { "name": "ציוד מטווחים", "quantity": 1, "unitCost": 4500 }
+          ]
+        },
+        {
+          "categoryName": "רפואה",
+          "items": [
+            { "name": "ערכות עזרה ראשונה", "quantity": 120, "unitCost": 35 },
+            { "name": "תחבושות אישיות", "quantity": 300, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "לוגיסטיקה",
+          "items": [
+            { "name": "שקי שינה", "quantity": 280, "unitCost": 95 },
+            { "name": "מזרנים", "quantity": 280, "unitCost": 70 }
+          ]
+        },
+        {
+          "categoryName": "אבטחה",
+          "items": [
+            { "name": "אמצעי תאורה", "quantity": 40, "unitCost": 90 },
+            { "name": "גדרות זמניות", "quantity": 200, "unitCost": 25 }
           ]
         }
       ]
     },
     {
-      "name": "גדוד 2",
-      "forceType": "חי\"ר",
-      "pikud": "מפקדת חטיבה 55",
-      "shibutsim": [
+      "title": "אימון מתקדם",
+      "codeShibutz": "34567890",
+      "directCost": 22000,
+      "costOfItems": 9000,
+      "mesima": "אימון מחלקות",
+      "serviceType": "מילואים- אימונים",
+      "variationPastYear": -5,
+      "dateBegin": "2026-04-05",
+      "dateEnd": "2026-04-20",
+      "unitId": "gdud-orev",
+      "resources": [
         {
-          "title": "קו מבצעי",
-          "codeShibuts": "45678901",
-          "directCost": 30000,
-          "costOfItems": 12500,
-          "mesima": "תעסוקה מבצעית",
-          "serviceType": "סדיר- אימונים",
-          "variationPastYear": 20,
-          "dateBegin": "2026-06-01",
-          "dateEnd": "2026-08-01",
-          "resources": [
-            {
-              "categoryName": "אבטחה",
-              "items": [
-                { "name": "אמצעי תצפית", "quantity": 12, "unitCost": 1800 },
-                { "name": "אמצעי תאורה", "quantity": 40, "unitCost": 90 }
-              ]
-            },
-            {
-              "categoryName": "רפואה",
-              "items": [
-                { "name": "ערכות חירום", "quantity": 40, "unitCost": 75 }
-              ]
-            },
-            {
-              "categoryName": "לוגיסטיקה",
-              "items": [
-                { "name": "גנרטורים", "quantity": 6, "unitCost": 2800 }
-              ]
-            }
+          "categoryName": "תחזוקה",
+          "items": [
+            { "name": "חלקי חילוף לנשק", "quantity": 80, "unitCost": 60 },
+            { "name": "שימון וניקוי", "quantity": 150, "unitCost": 10 }
+          ]
+        },
+        {
+          "categoryName": "תקשוב",
+          "items": [
+            { "name": "נתבים ניידים", "quantity": 6, "unitCost": 850 },
+            { "name": "כבלי תקשורת", "quantity": 120, "unitCost": 6 }
+          ]
+        },
+        {
+          "categoryName": "הדרכה",
+          "items": [
+            { "name": "אמצעי סימולציה", "quantity": 5, "unitCost": 2200 }
           ]
         }
       ]
     },
     {
-      "name": "גדוד 3",
-      "forceType": "אס\"ף",
-      "pikud": "מפקדת חטיבה 12",
-      "shibutsim": [
+      "title": "קו מבצעי",
+      "codeShibutz": "45678901",
+      "directCost": 30000,
+      "costOfItems": 12500,
+      "mesima": "תעסוקה מבצעית",
+      "serviceType": "סדיר- אימונים",
+      "variationPastYear": 20,
+      "dateBegin": "2026-06-01",
+      "dateEnd": "2026-08-01",
+      "unitId": "mahlaka-1",
+      "resources": [
         {
-          "title": "אימון חורף",
-          "codeShibuts": "56789012",
-          "directCost": 15000,
-          "costOfItems": 6800,
-          "mesima": "אימון פלוגתי",
-          "serviceType": "מילואים- אימונים",
-          "variationPastYear": -12,
-          "dateBegin": "2026-11-10",
-          "dateEnd": "2026-11-25",
-          "resources": [
-            {
-              "categoryName": "לוגיסטיקה",
-              "items": [
-                { "name": "ביגוד חורף", "quantity": 300, "unitCost": 180 },
-                { "name": "אוהלים", "quantity": 25, "unitCost": 950 }
-              ]
-            },
-            {
-              "categoryName": "תחזוקה",
-              "items": [
-                { "name": "אמצעי חימום", "quantity": 20, "unitCost": 400 }
-              ]
-            }
+          "categoryName": "אבטחה",
+          "items": [
+            { "name": "אמצעי תצפית", "quantity": 12, "unitCost": 1800 },
+            { "name": "אמצעי תאורה", "quantity": 40, "unitCost": 90 }
+          ]
+        },
+        {
+          "categoryName": "רפואה",
+          "items": [
+            { "name": "ערכות חירום", "quantity": 40, "unitCost": 75 }
+          ]
+        },
+        {
+          "categoryName": "לוגיסטיקה",
+          "items": [
+            { "name": "גנרטורים", "quantity": 6, "unitCost": 2800 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "אימון חורף",
+      "codeShibutz": "56789012",
+      "directCost": 15000,
+      "costOfItems": 6800,
+      "mesima": "אימון פלוגתי",
+      "serviceType": "מילואים- אימונים",
+      "variationPastYear": -12,
+      "dateBegin": "2026-11-10",
+      "dateEnd": "2026-11-25",
+      "unitId": "plugat-gimel",
+      "resources": [
+        {
+          "categoryName": "לוגיסטיקה",
+          "items": [
+            { "name": "ביגוד חורף", "quantity": 300, "unitCost": 180 },
+            { "name": "אוהלים", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחזוקה",
+          "items": [
+            { "name": "אמצעי חימום", "quantity": 20, "unitCost": 400 }
           ]
         }
       ]

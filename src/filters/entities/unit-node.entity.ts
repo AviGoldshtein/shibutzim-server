@@ -2,27 +2,23 @@ import {
   Entity,
   PrimaryColumn,
   Column,
-  ManyToOne,
-  OneToMany,
+  Tree,
+  TreeChildren,
+  TreeParent,
 } from "typeorm";
 
 @Entity({ schema: "static" })
+@Tree("closure-table")
 export class UnitNode {
-  // משתמשים ב-id מה-JSON שלך (לא auto)
   @PrimaryColumn()
   id: string;
 
   @Column()
   label: string;
 
-  // parent
-  @ManyToOne(() => UnitNode, (node) => node.children, {
-    nullable: true,
-    onDelete: "CASCADE",
-  })
-  parent: UnitNode | null;
-
-  // children
-  @OneToMany(() => UnitNode, (node) => node.parent)
+  @TreeChildren()
   children: UnitNode[];
+
+  @TreeParent()
+  parent: UnitNode;
 }

@@ -1,5 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany } from "typeorm";
-import { Gdud } from "./gdud.entity";
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  ManyToOne,
+  OneToMany,
+  JoinColumn,
+  Index,
+} from "typeorm";
+import { UnitNode } from "../../filters/entities/unit-node.entity";
 import { Resource } from "./resource.entity";
 
 @Entity({ schema: "core" })
@@ -13,10 +21,10 @@ export class Shibutz {
   @Column()
   codeShibutz: string;
 
-  @Column({ type: "decimal", precision: 10, scale: 2 })
+  @Column("numeric", { precision: 10, scale: 2 })
   directCost: number;
 
-  @Column({ type: "decimal", precision: 10, scale: 2 })
+  @Column("numeric", { precision: 10, scale: 2 })
   costOfItems: number;
 
   @Column()
@@ -25,7 +33,7 @@ export class Shibutz {
   @Column()
   serviceType: string;
 
-  @Column({ type: "decimal", precision: 10, scale: 2 })
+  @Column()
   variationPastYear: number;
 
   @Column({ type: "date" })
@@ -34,8 +42,13 @@ export class Shibutz {
   @Column({ type: "date" })
   dateEnd: string;
 
-  @ManyToOne(() => Gdud, (gdud) => gdud.shibutzim)
-  gdud: Gdud;
+  @ManyToOne(() => UnitNode, { eager: false })
+  @JoinColumn({ name: "unitNodeId" })
+  unitNode: UnitNode;
+
+  @Index()
+  @Column({ name: "unitNodeId" })
+  unitNodeId: string;
 
   @OneToMany(() => Resource, (resource) => resource.shibutz)
   resources: Resource[];

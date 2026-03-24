@@ -1,47 +1,58 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Repository } from "typeorm";
-import { Unit } from "./entities/unit.entity";
+import { Repository, TreeRepository, DataSource } from "typeorm";
+import { UnitNode } from "../filters/entities/unit-node.entity";
+import { Shibutz } from "./entities/shibutz.entity";
 import { GetShibutzimDto } from "./dto/get-shibutzim.dto";
 
 @Injectable()
 export class ShibutzimService {
+  private unitTreeRepo: TreeRepository<UnitNode>;
+
   constructor(
-    @InjectRepository(Unit)
-    private unitRepo: Repository<Unit>,
-  ) {}
+    @InjectRepository(Shibutz)
+    private readonly shibutzRepo: Repository<Shibutz>,
+
+    private readonly dataSource: DataSource,
+  ) {
+    this.unitTreeRepo = this.dataSource.getTreeRepository(UnitNode);
+  }
 
   async getShibutzim(query: GetShibutzimDto) {
     const { from, to, unitIds, serviceTypes, resourceTypes } = query;
 
-    const qb = this.unitRepo
-      .createQueryBuilder("unit")
-      .leftJoinAndSelect("unit.gdudim", "gdud")
-      .leftJoinAndSelect("gdud.shibutzim", "shibutz")
+    const unitsWithChildren: string[] = [];
+
+    for (const unitId of unitIds) {
+      const node = await this.unitTreeRepo.findOne({ where: { id: unitId } });
+      if (!node) {
+        console.warn(`⚠️  Unit with id '${unitId}' not found. Skipping.`);
+        continue;
+      };
+
+      const descendants = await this.unitTreeRepo.findDescendants(node);
+      unitsWithChildren.push(...descendants.map(d => d.id));
+    }
+
+    if (!unitsWithChildren.length) return [];
+
+    const qb = this.shibutzRepo
+      .createQueryBuilder("shibutz")
       .leftJoinAndSelect("shibutz.resources", "resource")
       .leftJoinAndSelect("resource.items", "item")
-
-      // סינון לפי יחידות
-      .where("unit.id IN (:...unitIds)", { unitIds })
-
-      // סינון לפי תאריכים
+      .where("shibutz.unitNodeId IN (:...unitIds)", { unitIds: unitsWithChildren })
       .andWhere("shibutz.dateBegin >= :from", { from })
       .andWhere("shibutz.dateEnd <= :to", { to });
 
-    // סינון לפי serviceTypes
     if (serviceTypes?.length) {
-      qb.andWhere("shibutz.serviceType IN (:...serviceTypes)", {
-        serviceTypes,
-      });
+      qb.andWhere("shibutz.serviceType IN (:...serviceTypes)", { serviceTypes });
     }
 
-    // סינון לפי resourceTypes
     if (resourceTypes?.length) {
-      qb.andWhere("resource.categoryName IN (:...resourceTypes)", {
-        resourceTypes,
-      });
+      qb.andWhere("resource.categoryName IN (:...resourceTypes)", { resourceTypes });
     }
 
-    return qb.getMany();
+    const shibutzim = await qb.getMany();
+    return shibutzim;
   }
 }

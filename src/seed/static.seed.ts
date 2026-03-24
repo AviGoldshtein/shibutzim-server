@@ -10,7 +10,8 @@ import unitsTree from "./data/units-tree-data.json";
 export async function seedStatic(dataSource: DataSource) {
   const resourceRepo = dataSource.getRepository(ResourceType);
   const serviceRepo = dataSource.getRepository(ServiceType);
-  const unitRepo = dataSource.getRepository(UnitNode);
+
+  const unitRepo = dataSource.getTreeRepository(UnitNode);
 
   // Resource Types
   const resourceEntities = resourceTypes.map((name) =>
@@ -25,11 +26,14 @@ export async function seedStatic(dataSource: DataSource) {
   await serviceRepo.save(serviceEntities);
 
   // Units Tree (recursive)
-  async function insertNode(node: any, parent: UnitNode | null = null) {
+  async function insertNode(
+    node: any,
+    parent: UnitNode | null = null
+  ): Promise<UnitNode> {
     const entity = unitRepo.create({
       id: node.id,
       label: node.label,
-      parent,
+      parent: parent ?? undefined,
     });
 
     const saved = await unitRepo.save(entity);
@@ -39,9 +43,13 @@ export async function seedStatic(dataSource: DataSource) {
         await insertNode(child, saved);
       }
     }
+
+    return saved;
   }
 
-  await insertNode(unitsTree[0], null);
+  for (const root of unitsTree) {
+    await insertNode(root, null);
+  }
 
   console.log("✅ Static data seeded");
 }

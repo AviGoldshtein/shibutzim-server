@@ -1,75 +1,62 @@
-import { Unit } from "../shibutzim/entities/unit.entity";
-import { Gdud } from "../shibutzim/entities/gdud.entity";
 import { Shibutz } from "../shibutzim/entities/shibutz.entity";
 import { Resource } from "../shibutzim/entities/resource.entity";
 import { Item } from "../shibutzim/entities/item.entity";
+import { UnitNode } from "../filters/entities/unit-node.entity";
 
 import data from "./data/shibutzim-data.json";
 import { DataSource } from "typeorm";
 
 export async function seedCore(dataSource: DataSource) {
-  const unitRepo = dataSource.getRepository(Unit);
-  const gdudRepo = dataSource.getRepository(Gdud);
+  const unitRepo = dataSource.getRepository(UnitNode);
   const shibutzRepo = dataSource.getRepository(Shibutz);
   const resourceRepo = dataSource.getRepository(Resource);
   const itemRepo = dataSource.getRepository(Item);
 
-  // UNIT
-  const unit = unitRepo.create({
-    name: data.unit,
-  });
+  for (const shibutzData of data.shibutzim) {
+    const unit = await unitRepo.findOneBy({ id: shibutzData.unitId });
+    if (!unit) {
+      console.warn(`⚠️ Unit with id ${shibutzData.unitId} not found. Skipping shibutz ${shibutzData.title}`);
+      continue;
+    }
 
-  await unitRepo.save(unit);
-
-  // GDUDIM
-  for (const gdudData of data.gdudim) {
-    const gdud = gdudRepo.create({
-      name: gdudData.name,
-      forceType: gdudData.forceType,
-      pikud: gdudData.pikud,
-      unit,
+    // SHIBUTZ
+    const shibutz = shibutzRepo.create({
+      title: shibutzData.title,
+      codeShibutz: shibutzData.codeShibutz,
+      directCost: shibutzData.directCost,
+      costOfItems: shibutzData.costOfItems,
+      mesima: shibutzData.mesima,
+      serviceType: shibutzData.serviceType,
+      variationPastYear: shibutzData.variationPastYear,
+      dateBegin: shibutzData.dateBegin,
+      dateEnd: shibutzData.dateEnd,
+      unitNodeId: shibutzData.unitId,
     });
 
-    await gdudRepo.save(gdud);
+    await shibutzRepo.save(shibutz);
 
-    // SHIBUTZIM
-    for (const shibutzData of gdudData.shibutsim) {
-      const shibutz = shibutzRepo.create({
-        title: shibutzData.title,
-        codeShibutz: shibutzData.codeShibuts,
-        directCost: shibutzData.directCost,
-        costOfItems: shibutzData.costOfItems,
-        mesima: shibutzData.mesima,
-        serviceType: shibutzData.serviceType,
-        variationPastYear: shibutzData.variationPastYear,
-        dateBegin: shibutzData.dateBegin,
-        dateEnd: shibutzData.dateEnd,
-        gdud,
+    // RESOURCES
+    for (const resourceData of shibutzData.resources) {
+      const resource = resourceRepo.create({
+        categoryName: resourceData.categoryName,
+        shibutz,
       });
 
-      await shibutzRepo.save(shibutz);
+      await resourceRepo.save(resource);
 
-      // RESOURCES
-      for (const resourceData of shibutzData.resources) {
-        const resource = resourceRepo.create({
-          categoryName: resourceData.categoryName,
-          shibutz,
-        });
+      // ITEMS
+      const items = resourceData.items.map((itemData) =>
+        itemRepo.create({
+          name: itemData.name,
+          quantity: itemData.quantity,
+          unitCost: itemData.unitCost,
+          resource,
+        })
+      );
 
-        await resourceRepo.save(resource);
-
-        // ITEMS
-        const items = resourceData.items.map((itemData) =>
-          itemRepo.create({
-            name: itemData.name,
-            quantity: itemData.quantity,
-            unitCost: itemData.unitCost,
-            resource,
-          })
-        );
-
-        await itemRepo.save(items);
-      }
+      await itemRepo.save(items);
     }
   }
+
+  console.log("✅ Core shibutzim seeded successfully");
 }
