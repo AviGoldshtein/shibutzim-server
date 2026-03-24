@@ -1,16 +1,42 @@
 import { Injectable } from "@nestjs/common";
+import { InjectRepository } from "@nestjs/typeorm";
+import { Repository } from "typeorm";
+
+import { ResourceType } from "./entities/resource-type.entity";
+import { ServiceType } from "./entities/service-type.entity";
+import { UnitNode } from "./entities/unit-node.entity";
 
 @Injectable()
 export class FiltersService {
-  getUnitsTree() {
-    return []; // TODO
+  constructor(
+    @InjectRepository(ResourceType)
+    private readonly resourceTypeRepository: Repository<ResourceType>,
+
+    @InjectRepository(ServiceType)
+    private readonly serviceTypeRepository: Repository<ServiceType>,
+
+    @InjectRepository(UnitNode)
+    private readonly unitNodeRepository: Repository<UnitNode>,
+  ) {}
+
+  async getUnitsTree(idSoldier: string) {
+    const rootId = 'givati' // TODO: get root id by soldier id
+    const treeRepo = this.unitNodeRepository.manager.getTreeRepository(UnitNode);
+
+    const root = await treeRepo.findOne({
+      where: { id: rootId },
+    });
+
+    if (!root) return null;
+
+    return treeRepo.findDescendantsTree(root);
   }
 
-  getServiceTypes() {
-    return ["Type A", "Type B"];
+  async getServiceTypes() {
+    return this.serviceTypeRepository.find();
   }
 
-  getResourceTypes() {
-    return ["Fuel", "Food", "Equipment"];
+  async getResourceTypes() {
+    return this.resourceTypeRepository.find();
   }
 }
