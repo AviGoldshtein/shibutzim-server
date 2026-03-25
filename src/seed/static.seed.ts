@@ -2,14 +2,17 @@ import { DataSource } from "typeorm";
 import { ResourceType } from "../filters/entities/resource-type.entity";
 import { ServiceType } from "../filters/entities/service-type.entity";
 import { UnitNode } from "../filters/entities/unit-node.entity";
+import { Location } from "../filters/entities/location.entity";
 
 import resourceTypes from "./data/resource-types.json";
 import serviceTypes from "./data/service-types.json";
 import unitsTree from "./data/units-tree-data.json";
+import locations from "./data/locations.json";
 
 export async function seedStatic(dataSource: DataSource) {
   const resourceRepo = dataSource.getRepository(ResourceType);
   const serviceRepo = dataSource.getRepository(ServiceType);
+  const locationRepo = dataSource.getRepository(Location);
 
   const unitRepo = dataSource.getTreeRepository(UnitNode);
 
@@ -24,6 +27,17 @@ export async function seedStatic(dataSource: DataSource) {
     serviceRepo.create({ name })
   );
   await serviceRepo.save(serviceEntities);
+
+  // Locations
+  const locationEntities = locations.map((loc) =>
+    locationRepo.create({
+      name: loc.name,
+      baseType: loc.baseType,
+      region: loc.region,
+    })
+  );
+
+  await locationRepo.save(locationEntities);
 
   // Units Tree (recursive)
   async function insertNode(

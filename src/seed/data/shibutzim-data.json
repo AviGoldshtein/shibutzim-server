@@ -6,11 +6,12 @@
       "directCost": 10000,
       "costOfItems": 5000,
       "mesima": "קורס מ”כים חי”ר",
-      "serviceType": "מילואים- אימונים",
+      "serviceType": "מילואים",
       "variationPastYear": -25,
       "dateBegin": "2026-01-10",
       "dateEnd": "2026-01-12",
       "unitId": "givati",
+      "location": "צריפין",
       "resources": [
         {
           "categoryName": "תחמושת",
@@ -50,11 +51,12 @@
       "directCost": 15000,
       "costOfItems": 6000,
       "mesima": "אימון הקמה גדודי",
-      "serviceType": "מילואים- אימונים",
+      "serviceType": "מילואים",
       "variationPastYear": 5,
       "dateBegin": "2026-03-01",
       "dateEnd": "2026-03-10",
       "unitId": "gdud-tzabar",
+      "location": "גולני",
       "resources": [
         {
           "categoryName": "ציוד אישי",
@@ -92,11 +94,12 @@
       "directCost": 18000,
       "costOfItems": 7200,
       "mesima": "טירונות לוחמים",
-      "serviceType": "סדיר- אימונים",
+      "serviceType": "סדיר",
       "variationPastYear": 10,
       "dateBegin": "2026-02-01",
       "dateEnd": "2026-03-15",
       "unitId": "gdud-rotem",
+      "location": "מחנה דוד",
       "resources": [
         {
           "categoryName": "הדרכה",
@@ -134,11 +137,12 @@
       "directCost": 22000,
       "costOfItems": 9000,
       "mesima": "אימון מחלקות",
-      "serviceType": "מילואים- אימונים",
+      "serviceType": "מילואים",
       "variationPastYear": -5,
       "dateBegin": "2026-04-05",
       "dateEnd": "2026-04-20",
       "unitId": "gdud-orev",
+      "location": "מחנה עופר",
       "resources": [
         {
           "categoryName": "תחזוקה",
@@ -168,11 +172,12 @@
       "directCost": 30000,
       "costOfItems": 12500,
       "mesima": "תעסוקה מבצעית",
-      "serviceType": "סדיר- אימונים",
+      "serviceType": "סדיר",
       "variationPastYear": 20,
       "dateBegin": "2026-06-01",
       "dateEnd": "2026-08-01",
       "unitId": "mahlaka-1",
+      "location": "מחנה שיזפון",
       "resources": [
         {
           "categoryName": "אבטחה",
@@ -201,11 +206,12 @@
       "directCost": 15000,
       "costOfItems": 6800,
       "mesima": "אימון פלוגתי",
-      "serviceType": "מילואים- אימונים",
+      "serviceType": "מילואים",
       "variationPastYear": -12,
       "dateBegin": "2026-11-10",
       "dateEnd": "2026-11-25",
       "unitId": "plugat-gimel",
+      "location": "מחנה שיזפון",
       "resources": [
         {
           "categoryName": "לוגיסטיקה",
@@ -218,6 +224,118 @@
           "categoryName": "תחזוקה",
           "items": [
             { "name": "אמצעי חימום", "quantity": 20, "unitCost": 400 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "אימון קיץ חטיבתי",
+      "codeShibutz": "67890123",
+      "directCost": 26000,
+      "costOfItems": 11000,
+      "mesima": "אימון חטיבה",
+      "serviceType": "קבע",
+      "variationPastYear": 8,
+      "dateBegin": "2026-07-10",
+      "dateEnd": "2026-07-25",
+      "unitId": "gdud-rotem",
+      "location": "גולני",
+      "resources": [
+        {
+          "categoryName": "תחבורה",
+          "items": [
+            { "name": "אוטובוסים", "quantity": 12, "unitCost": 1600 },
+            { "name": "משאיות", "quantity": 6, "unitCost": 3000 }
+          ]
+        },
+        {
+          "categoryName": "לוגיסטיקה",
+          "items": [
+            { "name": "מנות קרב", "quantity": 800, "unitCost": 18 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "תרגיל פתע",
+      "codeShibutz": "78901234",
+      "directCost": 12000,
+      "costOfItems": 4500,
+      "mesima": "תרגיל חירום",
+      "serviceType": "שירות לאומי",
+      "variationPastYear": -3,
+      "dateBegin": "2026-05-05",
+      "dateEnd": "2026-05-07",
+      "unitId": "plugat-zayin",
+      "location": "פילון",
+      "resources": [
+        {
+          "categoryName": "תקשוב",
+          "items": [
+            { "name": "מכשירי קשר", "quantity": 15, "unitCost": 400 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "אימון לילה",
+      "codeShibutz": "89012345",
+      "directCost": 9000,
+      "costOfItems": 3500,
+      "mesima": "אימון לוחמה בלילה",
+      "serviceType": "שירות אזרחי",
+      "variationPastYear": 2,
+      "dateBegin": "2026-09-12",
+      "dateEnd": "2026-09-14",
+      "unitId": "plugat-vav",
+      "location": "מחנה דוד",
+      "resources": [
+        {
+          "categoryName": "אבטחה",
+          "items": [
+            { "name": "אמצעי תאורה", "quantity": 60, "unitCost": 95 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "קליטת ציוד חדש",
+      "codeShibutz": "90123456",
+      "directCost": 14000,
+      "costOfItems": 7000,
+      "mesima": "הטמעת ציוד",
+      "serviceType": "סדיר",
+      "variationPastYear": 15,
+      "dateBegin": "2026-08-01",
+      "dateEnd": "2026-08-10",
+      "unitId": "mahlaka-8",
+      "location": "צריפין",
+      "resources": [
+        {
+          "categoryName": "ציוד אישי",
+          "items": [
+            { "name": "אפודים", "quantity": 100, "unitCost": 130 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "הכשרת מפקדים",
+      "codeShibutz": "01234567",
+      "directCost": 20000,
+      "costOfItems": 8000,
+      "mesima": "קורס מפקדים",
+      "serviceType": "מילואים",
+      "variationPastYear": 6,
+      "dateBegin": "2026-10-01",
+      "dateEnd": "2026-10-20",
+      "unitId": "plugat-gimel",
+      "location": "מחנה עופר",
+      "resources": [
+        {
+          "categoryName": "הדרכה",
+          "items": [
+            { "name": "חוברות", "quantity": 200, "unitCost": 15 }
           ]
         }
       ]

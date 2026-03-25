@@ -1,0 +1,8 @@
+[
+  { "name": "צריפין", "baseType": "לוגיסטי", "region": "מרכז" },
+  { "name": "גולני", "baseType": "הדרכה", "region": "צפון" },
+  { "name": "פילון", "baseType": "הדרכה", "region": "צפון" },
+  { "name": "מחנה דוד", "baseType": "הדרכה", "region": "צפון" },
+  { "name": "מחנה עופר", "baseType": "מבצעי", "region": "מרכז" },
+  { "name": "מחנה שיזפון", "baseType": "אימונים", "region": "דרום" }
+]

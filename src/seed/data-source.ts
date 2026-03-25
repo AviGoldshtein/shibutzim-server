@@ -6,6 +6,7 @@ import { Item } from "../shibutzim/entities/item.entity";
 import { ResourceType } from "../filters/entities/resource-type.entity";
 import { ServiceType } from "../filters/entities/service-type.entity";
 import { UnitNode } from "../filters/entities/unit-node.entity";
+import { Location } from "../filters/entities/location.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -14,6 +15,6 @@ export const AppDataSource = new DataSource({
   username: "postgres",
   password: "postgres",
   database: "shibutzim_db",
-  entities: [Shibutz, Resource, Item, ResourceType, ServiceType, UnitNode],
+  entities: [Shibutz, Resource, Item, ResourceType, ServiceType, UnitNode, Location],
   synchronize: false,
 });

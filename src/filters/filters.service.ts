@@ -5,6 +5,7 @@ import { Repository } from "typeorm";
 import { ResourceType } from "./entities/resource-type.entity";
 import { ServiceType } from "./entities/service-type.entity";
 import { UnitNode } from "./entities/unit-node.entity";
+import { Location } from "./entities/location.entity";
 
 @Injectable()
 export class FiltersService {
@@ -17,6 +18,9 @@ export class FiltersService {
 
     @InjectRepository(UnitNode)
     private readonly unitNodeRepository: Repository<UnitNode>,
+
+    @InjectRepository(Location)
+    private readonly locationRepository: Repository<Location>,
   ) {}
 
   async getUnitsTree(idSoldier: string) {
@@ -38,5 +42,9 @@ export class FiltersService {
 
   async getResourceTypes() {
     return this.resourceTypeRepository.find();
+  }
+
+  async getLocations() {
+    return this.locationRepository.find();
   }
 }

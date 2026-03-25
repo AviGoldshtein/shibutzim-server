@@ -15,10 +15,15 @@ export class GetShibutzimDto {
   @IsOptional()
   @Transform(({ value }) => value.split(","))
   @IsArray()
-  serviceTypes?: string[];
+  serviceTypeIds?: string[];
 
   @IsOptional()
   @Transform(({ value }) => value.split(","))
   @IsArray()
-  resourceTypes?: string[];
+  resourceTypeIds?: string[];
+
+  @IsOptional()
+  @Transform(({ value }) => value.split(","))
+  @IsArray()
+  locationIds?: string[];
 }
