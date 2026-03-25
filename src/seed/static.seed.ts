@@ -3,14 +3,17 @@ import { ResourceType } from "../filters/entities/resource-type.entity";
 import { ServiceType } from "../filters/entities/service-type.entity";
 import { UnitNode } from "../filters/entities/unit-node.entity";
 import { Location } from "../filters/entities/location.entity";
+import { ItemType } from "../filters/entities/item-type.entity";
 
 import resourceTypes from "./data/resource-types.json";
+import itemTypes from "./data/item-types.json";
 import serviceTypes from "./data/service-types.json";
 import unitsTree from "./data/units-tree-data.json";
 import locations from "./data/locations.json";
 
 export async function seedStatic(dataSource: DataSource) {
   const resourceRepo = dataSource.getRepository(ResourceType);
+  const itemRepo = dataSource.getRepository(ItemType);
   const serviceRepo = dataSource.getRepository(ServiceType);
   const locationRepo = dataSource.getRepository(Location);
 
@@ -21,6 +24,12 @@ export async function seedStatic(dataSource: DataSource) {
     resourceRepo.create({ name })
   );
   await resourceRepo.save(resourceEntities);
+
+  // Item Types
+  const itemEntities = itemTypes.map((name) =>
+    itemRepo.create({ name })
+  );
+  await itemRepo.save(itemEntities);
 
   // Service Types
   const serviceEntities = serviceTypes.map((name) =>

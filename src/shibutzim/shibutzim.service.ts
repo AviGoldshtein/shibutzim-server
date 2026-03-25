@@ -51,6 +51,7 @@ export class ShibutzimService {
       .createQueryBuilder("shibutz")
       .leftJoinAndSelect("shibutz.resources", "resource") // needed for response mapping
       .leftJoinAndSelect("resource.items", "item")
+      .leftJoinAndSelect("item.itemType", "itemType")
       .leftJoinAndSelect("shibutz.location", "location")
       .leftJoinAndSelect("shibutz.serviceType", "serviceType")
       .leftJoinAndSelect("resource.resourceType", "resourceType")
@@ -108,9 +109,13 @@ export class ShibutzimService {
 
         // Map nested resources
         resources: resources.map(
-          ({ resourceType, resourceTypeId, ...rRest }) => ({
+          ({ resourceType, resourceTypeId, items, ...rRest }) => ({
             ...rRest,
             resourceType: resourceType?.name ?? null,
+            items: items.map(({ itemType, itemTypeId, ...iRest }) => ({
+              ...iRest,
+              itemType: itemType?.name ?? null,
+            })),
           })
         ),
       })

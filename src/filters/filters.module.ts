@@ -6,10 +6,11 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { ResourceType } from "./entities/resource-type.entity";
 import { ServiceType } from "./entities/service-type.entity";
 import { Location } from "./entities/location.entity";
+import { ItemType } from "./entities/item-type.entity";
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UnitNode, ResourceType, ServiceType, Location])
+    TypeOrmModule.forFeature([UnitNode, ResourceType, ServiceType, Location, ItemType])
   ],
   controllers: [FiltersController],
   providers: [FiltersService]

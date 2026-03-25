@@ -20,6 +20,11 @@ export class FiltersController {
     return this.filtersService.getResourceTypes();
   }
 
+  @Get("item-types")
+  getItemTypes() {
+    return this.filtersService.getItemTypes();
+  }
+
   @Get("locations")
   getLocations() {
     return this.filtersService.getLocations();

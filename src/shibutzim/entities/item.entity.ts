@@ -3,16 +3,22 @@ import {
   PrimaryGeneratedColumn,
   Column,
   ManyToOne,
+  JoinColumn,
 } from "typeorm";
 import { Resource } from "./resource.entity";
+import { ItemType } from "../../filters/entities/item-type.entity";
 
 @Entity({ schema: "core" })
 export class Item {
   @PrimaryGeneratedColumn("uuid")
   id: string;
 
+  @ManyToOne(() => ItemType, { eager: true })
+  @JoinColumn({ name: "itemTypeId" })
+  itemType: ItemType;
+
   @Column()
-  name: string;
+  itemTypeId: string;
 
   @Column()
   quantity: number;

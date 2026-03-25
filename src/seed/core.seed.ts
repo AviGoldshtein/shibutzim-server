@@ -5,6 +5,7 @@ import { UnitNode } from "../filters/entities/unit-node.entity";
 import { Location } from "../filters/entities/location.entity";
 import { ResourceType } from "../filters/entities/resource-type.entity";
 import { ServiceType } from "../filters/entities/service-type.entity";
+import { ItemType } from "../filters/entities/item-type.entity";
 
 import data from "./data/shibutzim-data.json";
 import { DataSource } from "typeorm";
@@ -16,14 +17,16 @@ export async function seedCore(dataSource: DataSource) {
   const resourceRepo = dataSource.getRepository(Resource);
   const resourceTypeRepo = dataSource.getRepository(ResourceType);
   const serviceTypeRepo = dataSource.getRepository(ServiceType);
+  const itemTypeRepo = dataSource.getRepository(ItemType);
   const itemRepo = dataSource.getRepository(Item);
 
   // 🧠 טוענים הכל מראש (פעם אחת בלבד)
-  const [units, locations, resourceTypes, serviceTypes] = await Promise.all([
+  const [units, locations, resourceTypes, serviceTypes, itemTypes] = await Promise.all([
     unitRepo.find(),
     locationRepo.find(),
     resourceTypeRepo.find(),
     serviceTypeRepo.find(),
+    itemTypeRepo.find()
   ]);
 
   // 🗺️ maps
@@ -31,6 +34,7 @@ export async function seedCore(dataSource: DataSource) {
   const locationMap = new Map(locations.map((l) => [l.name, l.id]));
   const resourceTypeMap = new Map(resourceTypes.map(r => [r.name, r.id]));
   const serviceTypeMap = new Map(serviceTypes.map(s => [s.name, s.id]));
+  const itemTypeMap = new Map(itemTypes.map(i => [i.name, i.id]));
 
   for (const shibutzData of data.shibutzim) {
     const unit = unitMap.get(shibutzData.unitId);
@@ -93,18 +97,26 @@ export async function seedCore(dataSource: DataSource) {
       await resourceRepo.save(resource);
 
       // 📦 ITEMS
-      const items = resourceData.items.map((itemData) =>
-        itemRepo.create({
-          name: itemData.name,  // TODO: add "name" to Item entity and DB
+      for (const itemData of resourceData.items) {
+        const itemTypeId = itemTypeMap.get(itemData.name);
+        if (!itemTypeId) {
+          console.warn(
+            `⚠️ ItemType "${itemData.name}" not found. Skipping item in resource of ${shibutzData.title}`
+          );
+          continue;
+        }
+
+        const item = itemRepo.create({
           quantity: itemData.quantity,
           unitCost: itemData.unitCost,
           resource,
+          itemTypeId
         })
-      );
 
-      await itemRepo.save(items);
+        await itemRepo.save(item)
+      }
     }
   }
 
   console.log("✅ Core shibutzim seeded successfully");
-}
+} 
