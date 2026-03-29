@@ -26,10 +26,7 @@ export class ShibutzimController {
           items: { $ref: getSchemaPath(ShibutzDto) },
         },
         examples: {
-          example1: {
-            summary: "Real example",
-            value: SHIBUTZ_EXAMPLE,
-          },
+          full: { value: SHIBUTZ_EXAMPLE },
         },
       },
     },

@@ -2,40 +2,40 @@ import { ApiProperty } from "@nestjs/swagger";
 import { ShibutzResourceDto } from "./shibutz-resource.dto";
 
 export class ShibutzDto {
-  @ApiProperty()
+  @ApiProperty({ example: "b5831de0-b3a2-4598-adf7-2cf91f0a9897" })
   id: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "אימון הקמה" })
   title: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "SHB001" })
   codeShibutz: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "אימון הקמה גדודי" })
   mesima: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "1000.00" })
   directCost: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "500.00" })
   costOfItems: string;
 
   @ApiProperty({ example: 5 })
   variationPastYear: number;
 
-  @ApiProperty()
+  @ApiProperty({ example: "2026-03-01" })
   dateBegin: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "2026-03-10" })
   dateEnd: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "gdud-tzabar" })
   unitNodeId: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "גולני" })
   location: string;
 
-  @ApiProperty()
+  @ApiProperty({ example: "מילואים" })
   serviceType: string;
 
   @ApiProperty({ type: [ShibutzResourceDto] })
