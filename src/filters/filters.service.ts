@@ -7,6 +7,7 @@ import { ServiceType } from "./entities/service-type.entity";
 import { UnitNode } from "./entities/unit-node.entity";
 import { Location } from "./entities/location.entity";
 import { ItemType } from "./entities/item-type.entity";
+import { ForceType } from "./entities/force-type.entity";
 
 @Injectable()
 export class FiltersService {
@@ -25,6 +26,9 @@ export class FiltersService {
 
     @InjectRepository(ItemType)
     private readonly itemTypeRepository: Repository<ItemType>,
+
+    @InjectRepository(ForceType)
+    private readonly forceTypeRepository: Repository<ForceType>,
   ) {}
 
   async getUnitsTree(idSoldier: string) {
@@ -54,5 +58,9 @@ export class FiltersService {
 
   async getLocations() {
     return this.locationRepository.find();
+  }
+
+  async getForces() {
+    return this.forceTypeRepository.find();
   }
 }

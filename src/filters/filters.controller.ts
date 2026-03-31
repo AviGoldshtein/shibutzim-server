@@ -8,6 +8,7 @@ import { ServiceTypeDto } from "./dto/service-type.dto";
 import { ResourceTypeDto } from "./dto/resource-type.dto";
 import { ItemTypeDto } from "./dto/item-type.dto";
 import { LocationDto } from "./dto/location.dto";
+import { ForceTypeDto } from "./dto/force-type.dto";
 
 @ApiTags("Filters")
 @Controller("filters")
@@ -67,5 +68,16 @@ export class FiltersController {
   })
   getLocations() {
     return this.filtersService.getLocations();
+  }
+
+  @Get("forces")
+  @ApiOperation({ summary: "Get all available forces" })
+  @ApiResponse({
+    status: 200,
+    description: "List of forces",
+    type: [ForceTypeDto],
+  })
+  getForces() {
+    return this.filtersService.getForces();
   }
 }

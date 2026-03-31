@@ -4,9 +4,11 @@ import { ServiceType } from "../filters/entities/service-type.entity";
 import { UnitNode } from "../filters/entities/unit-node.entity";
 import { Location } from "../filters/entities/location.entity";
 import { ItemType } from "../filters/entities/item-type.entity";
+import { ForceType } from "../filters/entities/force-type.entity";
 
 import resourceTypes from "./data/resource-types.json";
 import itemTypes from "./data/item-types.json";
+import forceTypes from "./data/force-types.json";
 import serviceTypes from "./data/service-types.json";
 import unitsTree from "./data/units-tree-data.json";
 import locations from "./data/locations.json";
@@ -14,6 +16,7 @@ import locations from "./data/locations.json";
 export async function seedStatic(dataSource: DataSource) {
   const resourceRepo = dataSource.getRepository(ResourceType);
   const itemRepo = dataSource.getRepository(ItemType);
+  const forceRepo = dataSource.getRepository(ForceType);
   const serviceRepo = dataSource.getRepository(ServiceType);
   const locationRepo = dataSource.getRepository(Location);
 
@@ -36,6 +39,12 @@ export async function seedStatic(dataSource: DataSource) {
     serviceRepo.create({ name })
   );
   await serviceRepo.save(serviceEntities);
+
+  // Force Types
+  const forceEntities = forceTypes.map((name) =>
+    forceRepo.create({ name })
+  );
+  await forceRepo.save(forceEntities);
 
   // Locations
   const locationEntities = locations.map((loc) =>

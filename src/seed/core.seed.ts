@@ -6,6 +6,7 @@ import { Location } from "../filters/entities/location.entity";
 import { ResourceType } from "../filters/entities/resource-type.entity";
 import { ServiceType } from "../filters/entities/service-type.entity";
 import { ItemType } from "../filters/entities/item-type.entity";
+import { ForceType } from "../filters/entities/force-type.entity";
 
 import data from "./data/shibutzim-data.json";
 import { DataSource } from "typeorm";
@@ -19,14 +20,16 @@ export async function seedCore(dataSource: DataSource) {
   const serviceTypeRepo = dataSource.getRepository(ServiceType);
   const itemTypeRepo = dataSource.getRepository(ItemType);
   const itemRepo = dataSource.getRepository(Item);
+  const forceRepo = dataSource.getRepository(ForceType);
 
   // 🧠 טוענים הכל מראש (פעם אחת בלבד)
-  const [units, locations, resourceTypes, serviceTypes, itemTypes] = await Promise.all([
+  const [units, locations, resourceTypes, serviceTypes, itemTypes, forceTypes] = await Promise.all([
     unitRepo.find(),
     locationRepo.find(),
     resourceTypeRepo.find(),
     serviceTypeRepo.find(),
-    itemTypeRepo.find()
+    itemTypeRepo.find(),
+    forceRepo.find()
   ]);
 
   // 🗺️ maps
@@ -35,6 +38,7 @@ export async function seedCore(dataSource: DataSource) {
   const resourceTypeMap = new Map(resourceTypes.map(r => [r.name, r.id]));
   const serviceTypeMap = new Map(serviceTypes.map(s => [s.name, s.id]));
   const itemTypeMap = new Map(itemTypes.map(i => [i.name, i.id]));
+  const forceTypeMap = new Map(forceTypes.map(f => [f.name, f.id]));
 
   for (const shibutzData of data.shibutzim) {
     const unit = unitMap.get(shibutzData.unitId);
@@ -61,6 +65,14 @@ export async function seedCore(dataSource: DataSource) {
       continue;
     }
 
+    const forceTypeId = forceTypeMap.get(shibutzData.forceType);
+    if (!forceTypeId) {
+      console.warn(
+        `⚠️ ForceType "${shibutzData.forceType}" not found. Skipping ${shibutzData.title}`
+      );
+      continue;
+    }
+
     // 🧱 SHIBUTZ
     const shibutz = shibutzRepo.create({
       title: shibutzData.title,
@@ -74,6 +86,7 @@ export async function seedCore(dataSource: DataSource) {
       unitNodeId: unit.id,
       locationId,
       serviceTypeId,
+      forceTypeId,
     });
 
     await shibutzRepo.save(shibutz);

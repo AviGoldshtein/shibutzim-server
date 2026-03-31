@@ -11,6 +11,7 @@ import { UnitNode } from "../../filters/entities/unit-node.entity";
 import { Resource } from "./resource.entity";
 import { Location } from "../../filters/entities/location.entity";
 import { ServiceType } from "../../filters/entities/service-type.entity";
+import { ForceType } from "../../filters/entities/force-type.entity";
 
 @Entity({ schema: "core" })
 export class Shibutz {
@@ -29,13 +30,13 @@ export class Shibutz {
   mesima: string;
 
   // Financial data
-  @Column("numeric", { precision: 10, scale: 2 })
+  @Column("decimal", { precision: 10, scale: 2 })
   directCost: number;
 
-  @Column("numeric", { precision: 10, scale: 2 })
+  @Column("decimal", { precision: 10, scale: 2 })
   costOfItems: number;
 
-  @Column()
+  @Column("decimal", { precision: 10, scale: 2 })
   variationPastYear: number;
 
   // Date range
@@ -62,6 +63,15 @@ export class Shibutz {
   @Index()
   @Column({ name: "unitNodeId" })
   unitNodeId: string;
+
+  // Force relation
+  @ManyToOne(() => ForceType, { eager: false })
+  @JoinColumn({ name: "forceTypeId" })
+  forceType: ForceType;
+
+  @Index()
+  @Column({ name: "forceTypeId" })
+  forceTypeId: string;
 
   // Location relation
   @ManyToOne(() => Location, (location) => location.shibutzim, {

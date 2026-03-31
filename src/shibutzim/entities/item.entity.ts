@@ -23,7 +23,7 @@ export class Item {
   @Column()
   quantity: number;
 
-  @Column("numeric", { precision: 10, scale: 2 })
+  @Column("decimal", { precision: 10, scale: 2 })
   unitCost: number;
 
   @ManyToOne(() => Resource, (resource) => resource.items)

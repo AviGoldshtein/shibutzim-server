@@ -7,10 +7,11 @@ import { ResourceType } from "./entities/resource-type.entity";
 import { ServiceType } from "./entities/service-type.entity";
 import { Location } from "./entities/location.entity";
 import { ItemType } from "./entities/item-type.entity";
+import { ForceType } from './entities/force-type.entity';
 
 @Module({
   imports: [
-    TypeOrmModule.forFeature([UnitNode, ResourceType, ServiceType, Location, ItemType])
+    TypeOrmModule.forFeature([UnitNode, ResourceType, ServiceType, Location, ItemType, ForceType])
   ],
   controllers: [FiltersController],
   providers: [FiltersService]
