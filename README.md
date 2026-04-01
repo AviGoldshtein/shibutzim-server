@@ -56,6 +56,9 @@ docker compose up -d
 
 ### 4. אתחול מסד הנתונים (PoC / Proof of Work)
 
+המערכת כרגע תלויה בדאטה התחלתי כדי לעבוד בצורה תקינה.
+
+
 ```bash
 npm run initdb
 ```
