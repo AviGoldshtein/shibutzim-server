@@ -26,7 +26,7 @@ export class ShibutzimService {
     this.unitTreeRepo = this.dataSource.getTreeRepository(UnitNode);
   }
 
- @Cron('0 8 * * *') //all days at 8:00 AM clear the cache
+  @Cron('0 8 * * *')
   async handleDailyReset() {
     try {
       await this.cacheManager.clear();
@@ -45,12 +45,15 @@ export class ShibutzimService {
     } catch (err) {
       console.error(`Cache error: ${err}`);
     }
+
     const result = await factory();
+
     try {
       await this.cacheManager.set(key, result);
     } catch (err) {
       console.error(`Cache set error: ${err}`);
     }
+
     return result;
   }
 
@@ -62,14 +65,30 @@ export class ShibutzimService {
         query.unitIds,
       );
 
-      if (!unitsWithDescendants.length) return [];
+      if (!unitsWithDescendants.length) {
+        return {
+          period: {
+            start: query.from,
+            end: query.to,
+          },
+          shibutzim: [],
+        };
+      }
 
       const shibutzim = await this.fetchShibutzimFromDb(
         unitsWithDescendants,
         query,
       );
 
-      return this.normalizeShibutzim(shibutzim);
+      const normalized = this.normalizeShibutzim(shibutzim);
+
+      return {
+        period: {
+          start: query.from,
+          end: query.to,
+        },
+        shibutzim: normalized,
+      };
     });
   }
 
@@ -165,45 +184,32 @@ export class ShibutzimService {
   }
 
   private normalizeShibutzim(shibutzim: Shibutz[]) {
-    return shibutzim.map(
-      ({
-        location,
-        serviceType,
-        directCost,
-        costOfItems,
-        forceType,
-        resources,
-        locationId,
-        serviceTypeId,
-        forceTypeId,
-        unitNodeId,
-        unitNode,
-        ...rest
-      }) => ({
-        ...rest,
+    return shibutzim.map((shibutz) => ({
+      title: shibutz.title,
+      codeShibutz: shibutz.codeShibutz,
+      mesima: shibutz.mesima,
 
-        directCost: Number(directCost),
-        costOfItems: Number(costOfItems),
-        location: location?.name ?? null,
-        serviceType: serviceType?.name ?? null,
-        forceType: forceType?.name ?? null,
-        unitId: unitNode?.label ?? null,
+      dateBegin: shibutz.dateBegin,
+      dateEnd: shibutz.dateEnd,
 
-        // Map nested resources
-        resources: resources.map(
-          ({ resourceType, resourceTypeId, items, ...rRest }) => ({
-            ...rRest,
-            resourceType: resourceType?.name ?? null,
-            items: items.map(
-              ({ itemType, itemTypeId, unitCost, ...iRest }) => ({
-                ...iRest,
-                itemType: itemType?.name ?? null,
-                unitCost: Number(unitCost),
-              }),
-            ),
-          }),
-        ),
-      }),
-    );
+      directCost: Number(shibutz.directCost),
+      costOfItems: Number(shibutz.costOfItems),
+      variationPastYear: Number(shibutz.variationPastYear),
+
+      location: shibutz.location?.name ?? null,
+      serviceType: shibutz.serviceType?.name ?? null,
+      forceType: shibutz.forceType?.name ?? null,
+      unitId: shibutz.unitNode?.label ?? null,
+
+      resources: shibutz.resources.map((resource) => ({
+        categoryName: resource.resourceType?.name ?? null,
+
+        items: resource.items.map((item) => ({
+          name: item.itemType?.name ?? null,
+          quantity: item.quantity,
+          unitCost: Number(item.unitCost),
+        })),
+      })),
+    }));
   }
 }
