@@ -1,6 +1,9 @@
 import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
+import { CommonCacheModule } from './common/cache/common-cache.module';
 import { ConfigModule, ConfigService } from "@nestjs/config";
 import { TypeOrmModule } from "@nestjs/typeorm";
+import { ScheduleModule } from "@nestjs/schedule";
+
 import { ShibutzimModule } from "./shibutzim/shibutzim.module";
 import { FiltersModule } from "./filters/filters.module";
 import { DashboardModule } from "./dashboard/dashboard.module";
@@ -19,6 +22,9 @@ import { envValidationSchema } from "./config/env.validation";
         abortEarly: false
       }
     }),
+
+    CommonCacheModule,
+    ScheduleModule.forRoot(),
 
     // TypeORM setup using environment variables
     TypeOrmModule.forRootAsync({
