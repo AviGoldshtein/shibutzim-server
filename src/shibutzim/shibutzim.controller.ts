@@ -34,4 +34,4 @@ export class ShibutzimController {
   getShibutzim(@Query() query: GetShibutzimDto) {
     return this.shibutzimService.getShibutzim(query);
   }
-}
+}   

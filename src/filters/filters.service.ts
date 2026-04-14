@@ -35,29 +35,29 @@ export class FiltersService {
     private readonly forceTypeRepository: Repository<ForceType>,
   ) {}
 
-
-
-  private async getOrSet<T>(key: string, factory: () => Promise<T>): Promise<T> {
-  
-  try {
-    const cached = await this.cacheManager.get<T>(key);
-    if (cached) {    
-      return cached;
+  private async getOrSet<T>(
+    key: string,
+    factory: () => Promise<T>,
+  ): Promise<T> {
+    try {
+      const cached = await this.cacheManager.get<T>(key);
+      if (cached) {
+        return cached;
+      }
+    } catch (err) {
+      console.error(`Cache error for key ${key}:`, err);
     }
-  } catch (err) {
-    console.error(`Cache error for key ${key}:`, err);
+
+    const result = await factory();
+
+    try {
+      await this.cacheManager.set(key, result);
+    } catch (err) {
+      console.error(`Failed to set cache for key ${key}:`, err);
+    }
+
+    return result;
   }
-
-  const result = await factory();
-
-  try {
-    await this.cacheManager.set(key, result);
-  } catch (err) {
-    console.error(`Failed to set cache for key ${key}:`, err);
-  }
-
-  return result;
-}
 
   async getUnitsTree(idSoldier: string) {
     const rootId = 'givati'; // TODO: get root id by soldier id
@@ -69,7 +69,8 @@ export class FiltersService {
       const root = await treeRepo.findOne({ where: { id: rootId } });
       if (!root) return null;
 
-      return treeRepo.findDescendantsTree(root);
+      const tree = await treeRepo.findDescendantsTree(root);
+      return [tree];
     });
   }
 

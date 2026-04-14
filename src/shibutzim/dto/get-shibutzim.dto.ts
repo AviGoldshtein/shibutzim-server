@@ -2,6 +2,21 @@ import { IsArray, IsOptional, IsString } from "class-validator";
 import { Transform } from "class-transformer";
 import { ApiProperty, ApiPropertyOptional } from "@nestjs/swagger";
 
+const csvToArray = ({ value }: any) => {
+  if (!value) return [];
+
+  if (Array.isArray(value)) return value;
+
+  if (typeof value === "string") {
+    return value
+      .split(",")
+      .map((v) => v.trim())
+      .filter(Boolean);
+  }
+
+  return [];
+};
+
 export class GetShibutzimDto {
   @ApiProperty({
     description: "Start date for filtering (ISO format)",
@@ -21,7 +36,11 @@ export class GetShibutzimDto {
     description: "Comma-separated unit IDs",
     example: "id1,id2,id3",
   })
-  @Transform(({ value }) => value.split(","))
+  @Transform(({ value }) => {
+    if (Array.isArray(value)) return value;
+    if (typeof value === "string") return value.split(",");
+    return [];
+  })
   @IsArray()
   unitIds: string[];
 
@@ -30,7 +49,7 @@ export class GetShibutzimDto {
     example: "id1,id2",
   })
   @IsOptional()
-  @Transform(({ value }) => value.split(","))
+  @Transform(csvToArray)
   @IsArray()
   serviceTypeIds?: string[];
 
@@ -39,7 +58,7 @@ export class GetShibutzimDto {
     example: "id1,id2",
   })
   @IsOptional()
-  @Transform(({ value }) => value.split(","))
+  @Transform(csvToArray)
   @IsArray()
   resourceTypeIds?: string[];
 
@@ -48,7 +67,7 @@ export class GetShibutzimDto {
     example: "id1,id2",
   })
   @IsOptional()
-  @Transform(({ value }) => value.split(","))
+  @Transform(csvToArray)
   @IsArray()
   locationIds?: string[];
 }
