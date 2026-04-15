@@ -62,15 +62,12 @@ export class ShibutzimService {
 
     return this.getOrSet(cacheKey, async () => {
       const unitsWithDescendants = await this.getUnitsWithDescendants(
-        query.unitIds,
+        query.unitIds || [],
       );
 
       if (!unitsWithDescendants.length) {
         return {
-          period: {
-            start: query.from,
-            end: query.to,
-          },
+          period: { start: query.from, end: query.to },
           shibutzim: [],
         };
       }
@@ -93,121 +90,79 @@ export class ShibutzimService {
   }
 
   private async getUnitsWithDescendants(unitIds: string[]): Promise<string[]> {
-    const result: string[] = [];
-
-    for (const unitId of unitIds) {
-      const node = await this.unitTreeRepo.findOne({
-        where: { id: unitId },
-      });
-
-      if (!node) continue;
-
-      const descendants = await this.unitTreeRepo.findDescendants(node);
-      result.push(...descendants.map((d) => d.id));
+    const allIds = new Set<string>();
+    for (const id of unitIds) {
+      const node = await this.unitTreeRepo.findOne({ where: { id } });
+      if (node) {
+        const descendants = await this.unitTreeRepo.findDescendants(node);
+        descendants.forEach((d) => allIds.add(d.id));
+      }
     }
-
-    return result;
+    return Array.from(allIds);
   }
 
   private async fetchShibutzimFromDb(
     unitIds: string[],
     query: GetShibutzimDto,
   ): Promise<Shibutz[]> {
-    const { from, to, serviceTypeIds, resourceTypeIds, locationIds } = query;
+    const { from, to, serviceTypes, resourceTypes, locationIds } = query;
 
-    const qb = this.buildBaseQuery(unitIds, from, to);
+    const qb = this.shibutzRepo
+      .createQueryBuilder('shibutz')
+      .leftJoinAndSelect('shibutz.location', 'location')
+      .leftJoinAndSelect('shibutz.serviceType', 'serviceType')
+      .leftJoinAndSelect('shibutz.forceType', 'forceType')
+      .leftJoinAndSelect('shibutz.unitNode', 'unitNode')
+      .leftJoinAndSelect('shibutz.resources', 'resource')
+      .leftJoinAndSelect('resource.resourceType', 'resourceType')
+      .leftJoinAndSelect('resource.items', 'item')
+      .leftJoinAndSelect('item.itemType', 'itemType')
+      .where('shibutz.unitNodeId IN (:...unitIds)', { unitIds })
+      .andWhere('shibutz.dateBegin >= :from', { from })
+      .andWhere('shibutz.dateEnd <= :to', { to });
 
-    this.applyOptionalFilters(qb, {
-      serviceTypeIds,
-      resourceTypeIds,
-      locationIds,
-    });
+    if (serviceTypes?.length) {
+      qb.andWhere('shibutz.serviceTypeId IN (:...st)', { st: serviceTypes });
+    }
+
+    if (locationIds?.length) {
+      qb.andWhere('shibutz.locationId IN (:...locIds)', { locIds: locationIds });
+    }
+
+    if (resourceTypes?.length) {
+      qb.andWhere(
+        `EXISTS (
+          SELECT 1 FROM core.resource r 
+          WHERE r."shibutzId" = shibutz.id 
+          AND r."resourceTypeId" IN (:...resTypes)
+        )`,
+        { resTypes: resourceTypes },
+      );
+    }
 
     return qb.getMany();
   }
 
-  private buildBaseQuery(
-    unitIds: string[],
-    from: string,
-    to: string,
-  ): SelectQueryBuilder<Shibutz> {
-    return this.shibutzRepo
-      .createQueryBuilder('shibutz')
-      .leftJoinAndSelect('shibutz.resources', 'resource')
-      .leftJoinAndSelect('shibutz.unitNode', 'unitNode')
-      .leftJoinAndSelect('shibutz.forceType', 'forceType')
-      .leftJoinAndSelect('resource.items', 'item')
-      .leftJoinAndSelect('item.itemType', 'itemType')
-      .leftJoinAndSelect('shibutz.location', 'location')
-      .leftJoinAndSelect('shibutz.serviceType', 'serviceType')
-      .leftJoinAndSelect('resource.resourceType', 'resourceType')
-      .where('shibutz.unitNodeId IN (:...unitIds)', { unitIds })
-      .andWhere('shibutz.dateBegin >= :from', { from })
-      .andWhere('shibutz.dateEnd <= :to', { to });
-  }
-
-  private applyOptionalFilters(
-    qb: SelectQueryBuilder<Shibutz>,
-    filters: {
-      serviceTypeIds?: string[];
-      resourceTypeIds?: string[];
-      locationIds?: string[];
-    },
-  ) {
-    const { serviceTypeIds, resourceTypeIds, locationIds } = filters;
-
-    if (serviceTypeIds?.length) {
-      qb.andWhere('shibutz.serviceTypeId IN (:...serviceTypeIds)', {
-        serviceTypeIds,
-      });
-    }
-
-    if (resourceTypeIds?.length) {
-      qb.andWhere(
-        `
-        EXISTS (
-          SELECT 1
-          FROM core.resource r
-          WHERE r."shibutzId" = shibutz.id
-          AND r."resourceTypeId" IN (:...resourceTypeIds)
-        )
-      `,
-        { resourceTypeIds },
-      );
-    }
-
-    if (locationIds?.length) {
-      qb.andWhere('shibutz.locationId IN (:...locationIds)', {
-        locationIds,
-      });
-    }
-  }
-
   private normalizeShibutzim(shibutzim: Shibutz[]) {
-    return shibutzim.map((shibutz) => ({
-      title: shibutz.title,
-      codeShibutz: shibutz.codeShibutz,
-      mesima: shibutz.mesima,
-
-      dateBegin: shibutz.dateBegin,
-      dateEnd: shibutz.dateEnd,
-
-      directCost: Number(shibutz.directCost),
-      costOfItems: Number(shibutz.costOfItems),
-      variationPastYear: Number(shibutz.variationPastYear),
-
-      location: shibutz.location?.name ?? null,
-      serviceType: shibutz.serviceType?.name ?? null,
-      forceType: shibutz.forceType?.name ?? null,
-      unitId: shibutz.unitNode?.label ?? null,
-
-      resources: shibutz.resources.map((resource) => ({
-        categoryName: resource.resourceType?.name ?? null,
-
-        items: resource.items.map((item) => ({
-          name: item.itemType?.name ?? null,
-          quantity: item.quantity,
-          unitCost: Number(item.unitCost),
+    return shibutzim.map((s) => ({
+      title: s.title,
+      codeShibutz: s.codeShibutz,
+      mesima: s.mesima,
+      dateBegin: s.dateBegin,
+      dateEnd: s.dateEnd,
+      directCost: Number(s.directCost || 0),
+      costOfItems: Number(s.costOfItems || 0),
+      variationPastYear: Number(s.variationPastYear || 0),
+      location: s.location?.name ?? null,
+      serviceType: s.serviceType?.name ?? null,
+      forceType: s.forceType?.name ?? null,
+      unitId: s.unitNode?.label ?? null,
+      resources: (s.resources || []).map((r) => ({
+        categoryName: r.resourceType?.name ?? null,
+        items: (r.items || []).map((i) => ({
+          name: i.itemType?.name ?? null,
+          quantity: i.quantity,
+          unitCost: Number(i.unitCost || 0),
         })),
       })),
     }));
