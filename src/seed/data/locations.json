@@ -4,5 +4,9 @@
   { "name": "פילון", "baseType": "הדרכה", "region": "צפון" },
   { "name": "מחנה דוד", "baseType": "הדרכה", "region": "צפון" },
   { "name": "מחנה עופר", "baseType": "מבצעי", "region": "מרכז" },
-  { "name": "מחנה שיזפון", "baseType": "אימונים", "region": "דרום" }
+  { "name": "מחנה שיזפון", "baseType": "אימונים", "region": "דרום" },
+  { "name": "מחנה פלוגות", "baseType": "אימונים", "region": "דרום" },
+  { "name": "מחנה סירקין", "baseType": "אימונים", "region": "מרכז" },
+  { "name": "מחנה רבין", "baseType": "אימונים", "region": "מרכז" },
+  { "name": "מחנה קבע 98", "baseType": "אימונים", "region": "מרכז" }
 ]
