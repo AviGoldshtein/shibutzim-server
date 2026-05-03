@@ -17,32 +17,43 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            { "name": "כד’ 5.56 מ”מ לאימונים", "quantity": 1200, "unitCost": 1.5 },
-            { "name": "כד’ 5.56 מ”מ", "quantity": 300, "unitCost": 5 },
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
-            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 }
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
           ]
         },
         {
-          "categoryName": "לוגיסטיקה",
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 600, "unitCost": 18 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
           "items": [
-            { "name": "מנות קרב", "quantity": 600, "unitCost": 18 },
-            { "name": "מים מינרליים (ליטר)", "quantity": 2400, "unitCost": 1.2 }
+            { "name": "ציוד אישי", "quantity": 60, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 40, "unitCost": 12 },
+            { "name": "תאורה", "quantity": 25, "unitCost": 150 }
           ]
         },
         {
-          "categoryName": "רפואה",
+          "categoryName": "הפשרות",
           "items": [
-            { "name": "ערכות עזרה ראשונה", "quantity": 60, "unitCost": 35 },
-            { "name": "חומרי חיטוי", "quantity": 40, "unitCost": 12 }
+            { "name": "הפשרות", "quantity": 25, "unitCost": 450 },
+            { "name": "אוהלים", "quantity": 100, "unitCost": 15 }
           ]
         },
         {
-          "categoryName": "תקשוב",
-          "items": [
-            { "name": "מכשירי קשר", "quantity": 25, "unitCost": 450 },
-            { "name": "סוללות גיבוי", "quantity": 100, "unitCost": 15 }
-          ]
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
         }
       ]
     },
@@ -55,38 +66,29 @@
       "serviceType": "מילואים",
       "forceType": "אס\"ף",
       "variationPastYear": 5,
-      "dateBegin": "2026-03-01",
+      "dateBegin": "2026-02-24",
       "dateEnd": "2026-03-10",
       "unitId": "gdud-tzabar",
       "location": "גולני",
       "resources": [
         {
-          "categoryName": "ציוד אישי",
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 200, "unitCost": 120 }]
+        },
+        {
+          "categoryName": "ק\"מ",
+          "items": [{ "name": "ק\"מ", "quantity": 10, "unitCost": 1500 }]
+        },
+        {
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "אפודים", "quantity": 200, "unitCost": 120 },
-            { "name": "קסדות", "quantity": 200, "unitCost": 90 }
+            { "name": "כד’ 5.56 מ”מ", "quantity": 300, "unitCost": 12 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 }
           ]
         },
         {
-          "categoryName": "תחבורה",
-          "items": [
-            { "name": "אוטובוסים", "quantity": 10, "unitCost": 1500 },
-            { "name": "משאיות לוגיסטיות", "quantity": 4, "unitCost": 3200 }
-          ]
-        },
-        {
-          "categoryName": "הדרכה",
-          "items": [
-            { "name": "חוברות אימון", "quantity": 300, "unitCost": 12 },
-            { "name": "לוחות תכנון", "quantity": 20, "unitCost": 80 }
-          ]
-        },
-        {
-          "categoryName": "תחזוקה",
-          "items": [
-            { "name": "כלי עבודה", "quantity": 15, "unitCost": 250 },
-            { "name": "חלקי חילוף כלליים", "quantity": 50, "unitCost": 60 }
-          ]
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 15, "unitCost": 250 }]
         }
       ]
     },
@@ -105,32 +107,33 @@
       "location": "מחנה דוד",
       "resources": [
         {
-          "categoryName": "הדרכה",
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 300, "unitCost": 12 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
           "items": [
-            { "name": "חוברות אימון", "quantity": 300, "unitCost": 12 },
-            { "name": "ציוד מטווחים", "quantity": 1, "unitCost": 4500 }
+            { "name": "ציוד אישי", "quantity": 120, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 300, "unitCost": 8 }
           ]
         },
         {
-          "categoryName": "רפואה",
+          "categoryName": "הובלות",
           "items": [
-            { "name": "ערכות עזרה ראשונה", "quantity": 120, "unitCost": 35 },
-            { "name": "תחבושות אישיות", "quantity": 300, "unitCost": 8 }
+            { "name": "משאיות", "quantity": 280, "unitCost": 95 },
+            { "name": "סמי טריילר", "quantity": 25, "unitCost": 950 }
           ]
         },
         {
-          "categoryName": "לוגיסטיקה",
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "שקי שינה", "quantity": 280, "unitCost": 95 },
-            { "name": "מזרנים", "quantity": 280, "unitCost": 70 }
+            { "name": "רימון יד מס’ 4", "quantity": 40, "unitCost": 90 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 25 }
           ]
         },
         {
-          "categoryName": "אבטחה",
-          "items": [
-            { "name": "אמצעי תאורה", "quantity": 40, "unitCost": 90 },
-            { "name": "גדרות זמניות", "quantity": 200, "unitCost": 25 }
-          ]
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
         }
       ]
     },
@@ -149,69 +152,85 @@
       "location": "מחנה עופר",
       "resources": [
         {
-          "categoryName": "תחזוקה",
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 80, "unitCost": 60 }]
+        },
+        {
+          "categoryName": "ק\"מ",
+          "items": [{ "name": "ק\"מ", "quantity": 6, "unitCost": 850 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
           "items": [
-            { "name": "חלקי חילוף לנשק", "quantity": 80, "unitCost": 60 },
-            { "name": "שימון וניקוי", "quantity": 150, "unitCost": 10 }
+            { "name": "ציוד אישי", "quantity": 5, "unitCost": 2200 },
+            { "name": "ציוד מטווחים", "quantity": 20, "unitCost": 150 },
+            { "name": "תאורה", "quantity": 25, "unitCost": 150 }
           ]
         },
         {
-          "categoryName": "תקשוב",
-          "items": [
-            { "name": "נתבים ניידים", "quantity": 6, "unitCost": 850 },
-            { "name": "כבלי תקשורת", "quantity": 120, "unitCost": 6 }
-          ]
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
         },
         {
-          "categoryName": "הדרכה",
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "אמצעי סימולציה", "quantity": 5, "unitCost": 2200 }
+            { "name": "כד’ 5.56 מ”מ", "quantity": 300, "unitCost": 12 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
           ]
         }
       ]
     },
     {
-      "title": "קו מבצעי",
+      "title": "מפח\"ט טירונות",
       "codeShibutz": "45678901",
       "directCost": 30000,
       "costOfItems": 12500,
-      "mesima": "תעסוקה מבצעית",
+      "mesima": "אימון מפקדי טירונות",
       "serviceType": "סדיר",
       "forceType": "חה\"ן",
       "variationPastYear": 20,
-      "dateBegin": "2026-06-01",
-      "dateEnd": "2026-08-01",
+      "dateBegin": "2026-04-01",
+      "dateEnd": "2026-06-01",
       "unitId": "mahlaka-1",
       "location": "מחנה שיזפון",
       "resources": [
         {
-          "categoryName": "אבטחה",
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1800 }]
+        },
+        {
+          "categoryName": "הובלות",
           "items": [
-            { "name": "אמצעי תצפית", "quantity": 12, "unitCost": 1800 },
-            { "name": "אמצעי תאורה", "quantity": 40, "unitCost": 90 }
+            { "name": "משאיות", "quantity": 40, "unitCost": 75 },
+            { "name": "גרר", "quantity": 40, "unitCost": 75 },
+            { "name": "סמי טריילר", "quantity": 25, "unitCost": 950 }
           ]
         },
         {
-          "categoryName": "רפואה",
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "ערכות חירום", "quantity": 40, "unitCost": 75 }
-          ]
-        },
-        {
-          "categoryName": "לוגיסטיקה",
-          "items": [
-            { "name": "גנרטורים", "quantity": 6, "unitCost": 2800 }
+            { "name": "תותח", "quantity": 6, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "רימון יד מס’ 20", "quantity": 100, "unitCost": 12 },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 500, "unitCost": 5 }
           ]
         }
       ]
     },
     {
-      "title": "אימון חורף",
+      "title": "תרג\"ד חי\"יר סדיר",
       "codeShibutz": "56789012",
       "directCost": 15000,
       "costOfItems": 6800,
-      "mesima": "אימון פלוגתי",
-      "serviceType": "מילואים",
+      "mesima": "אימון מחלקות חי\"ר סדיר",
+      "serviceType": "סדיר",
       "forceType": "חי\"ר",
       "variationPastYear": -12,
       "dateBegin": "2026-11-10",
@@ -220,16 +239,19 @@
       "location": "מחנה שיזפון",
       "resources": [
         {
-          "categoryName": "לוגיסטיקה",
+          "categoryName": "הובלות",
           "items": [
-            { "name": "ביגוד חורף", "quantity": 300, "unitCost": 180 },
-            { "name": "אוהלים", "quantity": 25, "unitCost": 950 }
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
           ]
         },
         {
-          "categoryName": "תחזוקה",
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "אמצעי חימום", "quantity": 20, "unitCost": 400 }
+            { "name": "רימון יד מס’ 4", "quantity": 20, "unitCost": 400 },
+            { "name": "רימון יד מס’ 20", "quantity": 50, "unitCost": 600 },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 12 },
+            { "name": "טיל נ\"ט", "quantity": 200, "unitCost": 12 }
           ]
         }
       ]
@@ -246,20 +268,51 @@
       "dateBegin": "2026-07-10",
       "dateEnd": "2026-07-25",
       "unitId": "gdud-rotem",
-      "location": "גולני",
+      "location": "מחנה דוד",
       "resources": [
         {
-          "categoryName": "תחבורה",
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1600 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
           "items": [
-            { "name": "אוטובוסים", "quantity": 12, "unitCost": 1600 },
-            { "name": "משאיות", "quantity": 6, "unitCost": 3000 }
+            { "name": "ציוד אישי", "quantity": 800, "unitCost": 18 },
+            { "name": "ציוד מטווחים", "quantity": 400, "unitCost": 8 }
           ]
         },
         {
-          "categoryName": "לוגיסטיקה",
+          "categoryName": "הובלות",
           "items": [
-            { "name": "מנות קרב", "quantity": 800, "unitCost": 18 }
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
           ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        },
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 15, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
         }
       ]
     },
@@ -269,7 +322,7 @@
       "directCost": 12000,
       "costOfItems": 4500,
       "mesima": "תרגיל חירום",
-      "serviceType": "שירות לאומי",
+      "serviceType": "סדיר",
       "forceType": "חת\"ם",
       "variationPastYear": -3,
       "dateBegin": "2026-05-05",
@@ -278,9 +331,21 @@
       "location": "פילון",
       "resources": [
         {
-          "categoryName": "תקשוב",
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 15, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "מכשירי קשר", "quantity": 15, "unitCost": 400 }
+            { "name": "כד’ 5.56 מ”מ", "quantity": 300, "unitCost": 12 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 }
           ]
         }
       ]
@@ -291,7 +356,7 @@
       "directCost": 9000,
       "costOfItems": 3500,
       "mesima": "אימון לוחמה בלילה",
-      "serviceType": "שירות אזרחי",
+      "serviceType": "קבע",
       "forceType": "חת\"ם",
       "variationPastYear": 2,
       "dateBegin": "2026-09-12",
@@ -300,9 +365,10 @@
       "location": "מחנה דוד",
       "resources": [
         {
-          "categoryName": "אבטחה",
+          "categoryName": "הובלות",
           "items": [
-            { "name": "אמצעי תאורה", "quantity": 60, "unitCost": 95 }
+            { "name": "משאיות", "quantity": 60, "unitCost": 95 },
+            { "name": "סמי טריילר", "quantity": 20, "unitCost": 75 }
           ]
         }
       ]
@@ -322,9 +388,11 @@
       "location": "צריפין",
       "resources": [
         {
-          "categoryName": "ציוד אישי",
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "אפודים", "quantity": 100, "unitCost": 130 }
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 500, "unitCost": 8 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 }
           ]
         }
       ]
@@ -344,10 +412,907 @@
       "location": "מחנה עופר",
       "resources": [
         {
-          "categoryName": "הדרכה",
+          "categoryName": "תחמושת",
           "items": [
-            { "name": "חוברות", "quantity": 200, "unitCost": 15 }
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 100, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 50, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 3 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
           ]
+        },
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 25, "unitCost": 450 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבתי",
+      "codeShibutz": "84022492",
+      "directCost": 25000,
+      "costOfItems": 9000,
+      "mesima": "אימון חטיבתי",
+      "serviceType": "קבע",
+      "forceType": "חש\"ן",
+      "variationPastYear": 12,
+      "dateBegin": "2026-09-01",
+      "dateEnd": "2026-09-15",
+      "unitId": "gdud-rotem",
+      "location": "מחנה קבע 98",
+      "resources": [
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 50,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 200, "unitCost": 8 },
+            { "name": "רימון יד מס’ 4", "quantity": 100, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 50, "unitCost": 3 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "הבטחת מוכנות מבצעית",
+      "codeShibutz": "9510951",
+      "directCost": 18000,
+      "costOfItems": 7500,
+      "mesima": "שמירה על מוכנות מבצעית",
+      "serviceType": "מילואים",
+      "forceType": "אס\"ף",
+      "variationPastYear": 7,
+      "dateBegin": "2026-12-01",
+      "dateEnd": "2026-12-31",
+      "unitId": "givati",
+      "location": "מחנה שיזפון",
+      "resources": [
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "רימון יד מס’ 20", "quantity": 100, "unitCost": 12 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 200, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [{ "name": "משאיות", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 50, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 20, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "ליל התרגילים",
+      "codeShibutz": "6548885",
+      "directCost": 12000,
+      "costOfItems": 5000,
+      "mesima": "תרגיל לילה",
+      "serviceType": "סדיר",
+      "forceType": "חש\"ן",
+      "variationPastYear": 0,
+      "dateBegin": "2026-12-01",
+      "dateEnd": "2026-12-31",
+      "unitId": "gdud-rotem",
+      "location": "מחנה קבע 98",
+      "resources": [
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "רימון יד מס’ 20", "quantity": 100, "unitCost": 12 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 200, "unitCost": 8 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 20, "unitCost": 75 },
+            { "name": "סמי טריילר", "quantity": 20, "unitCost": 75 }
+          ]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 50, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 20, "unitCost": 12 },
+            { "name": "תאורה", "quantity": 25, "unitCost": 150 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "סדיר 82 תורן",
+      "codeShibutz": "9871555",
+      "directCost": 10000,
+      "costOfItems": 5000,
+      "mesima": "סדיר 82 תורן",
+      "serviceType": "סדיר",
+      "forceType": "חש\"ן",
+      "variationPastYear": 0,
+      "dateBegin": "2026-11-01",
+      "dateEnd": "2026-11-29",
+      "unitId": "gdud-rotem",
+      "location": "מחנה דוד",
+      "resources": [
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 20, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 60, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 40, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "הפשרות",
+          "items": [
+            { "name": "הפשרות", "quantity": 25, "unitCost": 450 },
+            { "name": "אוהלים", "quantity": 100, "unitCost": 15 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "פברואר 82 תורן",
+      "codeShibutz": "9871545",
+      "directCost": 10000,
+      "costOfItems": 5000,
+      "mesima": "פברואר 82 תורן",
+      "serviceType": "קבע",
+      "forceType": "חת\"ם",
+      "variationPastYear": 2,
+      "dateBegin": "2026-02-18",
+      "dateEnd": "2026-03-28",
+      "unitId": "givati",
+      "location": "גולני",
+      "resources": [
+        {
+          "categoryName": "ק\"מ",
+          "items": [{ "name": "ק\"מ", "quantity": 100, "unitCost": 1500 }]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [{ "name": "משאיות", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 50, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 20, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "הכשרת מפקדים",
+      "codeShibutz": "987418",
+      "directCost": 20000,
+      "costOfItems": 8000,
+      "mesima": "מפקדת קורס מפקדים",
+      "serviceType": "קבע",
+      "forceType": "עורף",
+      "variationPastYear": -2,
+      "dateBegin": "2026-01-05",
+      "dateEnd": "2026-01-25",
+      "unitId": "plugat-gimel",
+      "location": "מחנה סירקין",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 25, "unitCost": 450 }]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "עורב ירוק",
+      "codeShibutz": "987189",
+      "directCost": 15000,
+      "costOfItems": 6000,
+      "mesima": "עורב ירוק סודי",
+      "serviceType": "קבע",
+      "forceType": "עורף",
+      "variationPastYear": 0,
+      "dateBegin": "2026-05-05",
+      "dateEnd": "2026-05-25",
+      "unitId": "plugat-gimel",
+      "location": "מחנה סירקין",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 25, "unitCost": 450 }]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "גמלון 82 תורן",
+      "codeShibutz": "98715555",
+      "directCost": 10000,
+      "costOfItems": 5000,
+      "mesima": "גמלון 82 תורן",
+      "serviceType": "קבע",
+      "forceType": "חת\"ם",
+      "variationPastYear": 0,
+      "dateBegin": "2026-02-01",
+      "dateEnd": "2026-02-28",
+      "unitId": "givati",
+      "location": "גולני",
+      "resources": [
+        {
+          "categoryName": "ק\"מ",
+          "items": [{ "name": "ק\"מ", "quantity": 100, "unitCost": 1500 }]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [{ "name": "משאיות", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 50, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 20, "unitCost": 12 },
+            { "name": "תאורה", "quantity": 25, "unitCost": 150 }
+          ]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "העברת ציוד",
+      "codeShibutz": "8717111",
+      "directCost": 5000,
+      "costOfItems": 2000,
+      "mesima": "העברת ציוד",
+      "serviceType": "קבע",
+      "forceType": "עורף",
+      "variationPastYear": 0,
+      "dateBegin": "2026-06-01",
+      "dateEnd": "2026-06-30",
+      "unitId": "gdud-tzabar",
+      "location": "מחנה פלוגות",
+      "resources": [
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "רימון יד מס’ 20", "quantity": 100, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 20, "unitCost": 75 },
+            { "name": "גרר", "quantity": 20, "unitCost": 75 },
+            { "name": "סמי טריילר", "quantity": 10, "unitCost": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "לחי 82 תורן",
+      "codeShibutz": "8717112",
+      "directCost": 10000,
+      "costOfItems": 5000,
+      "mesima": "לחי 82 תורן",
+      "serviceType": "קבע",
+      "forceType": "חי\"ר",
+      "variationPastYear": 3,
+      "dateBegin": "2026-03-01",
+      "dateEnd": "2026-03-31",
+      "unitId": "mahlaka-8",
+      "location": "פילון",
+      "resources": [
+        {
+          "categoryName": "הובלות",
+          "items": [{ "name": "משאיות", "quantity": 20, "unitCost": 75 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 50, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 20, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 50, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבתי",
+      "codeShibutz": "7711123",
+      "directCost": 25000,
+      "costOfItems": 9000,
+      "mesima": "אימון חטיבתי",
+      "serviceType": "קבע",
+      "forceType": "חי\"ר",
+      "variationPastYear": -5,
+      "dateBegin": "2026-04-01",
+      "dateEnd": "2026-04-30",
+      "unitId": "mahlaka-8",
+      "location": "פילון",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 50, "unitCost": 1200 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 100, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 50, "unitCost": 12 },
+            { "name": "תאורה", "quantity": 25, "unitCost": 150 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 500, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 100, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "עכגם 82 תורן",
+      "codeShibutz": "7711124",
+      "directCost": 15000,
+      "costOfItems": 6000,
+      "mesima": "עכגם 82 תורן",
+      "serviceType": "קבע",
+      "forceType": "חי\"ר",
+      "variationPastYear": 2,
+      "dateBegin": "2026-10-01",
+      "dateEnd": "2026-10-31",
+      "unitId": "mahlaka-8",
+      "location": "פילון",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 50, "unitCost": 1200 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 100, "unitCost": 35 },
+            { "name": "ציוד מטווחים", "quantity": 50, "unitCost": 12 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 500, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 100, "unitCost": 80 }
+          ]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון הקמה",
+      "codeShibutz": "9879874",
+      "directCost": 15000,
+      "costOfItems": 0,
+      "mesima": "אימון הקמה",
+      "serviceType": "קבע",
+      "forceType": "חי\"ר",
+      "variationPastYear": 0,
+      "dateBegin": "2026-05-01",
+      "dateEnd": "2026-05-31",
+      "unitId": "mahlaka-8",
+      "location": "פילון",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [
+            { "name": "הפשרות", "quantity": 50, "unitCost": 1200 },
+            { "name": "ציוד אישי", "quantity": 100, "unitCost": 35 }
+          ]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [{ "name": "ציוד מטווחים", "quantity": 50, "unitCost": 12 }]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "כד’ 5.56 מ”מ", "quantity": 500, "unitCost": 15 },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 100, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "רימון יד מס’ 40", "quantity": 50, "unitCost": 25 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון מפקדי טירונות",
+      "codeShibutz": "9879875",
+      "directCost": 30000,
+      "costOfItems": 12500,
+      "mesima": "אימון מפקדי טירונות",
+      "serviceType": "סדיר",
+      "forceType": "חה\"ן",
+      "variationPastYear": 20,
+      "dateBegin": "2026-06-01",
+      "dateEnd": "2026-08-01",
+      "unitId": "mahlaka-1",
+      "location": "מחנה שיזפון",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1800 }]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 40, "unitCost": 75 },
+            { "name": "גרר", "quantity": 40, "unitCost": 75 },
+            { "name": "סמי טריילר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "תותח", "quantity": 6, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "רימון יד מס’ 20", "quantity": 100, "unitCost": 12 },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 500, "unitCost": 5 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "אימון מחלקות חי\"ר סדיר",
+      "codeShibutz": "9879876",
+      "directCost": 15000,
+      "costOfItems": 6800,
+      "mesima": "אימון מחלקות חי\"ר סדיר",
+      "serviceType": "סדיר",
+      "forceType": "חי\"ר",
+      "variationPastYear": -12,
+      "dateBegin": "2026-10-10",
+      "dateEnd": "2026-10-25",
+      "unitId": "plugat-gimel",
+      "location": "מחנה שיזפון",
+      "resources": [
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            { "name": "רימון יד מס’ 4", "quantity": 20, "unitCost": 400 },
+            { "name": "רימון יד מס’ 20", "quantity": 50, "unitCost": 600 },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 200, "unitCost": 12 },
+            { "name": "טיל נ\"ט", "quantity": 200, "unitCost": 12 }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבה",
+      "codeShibutz": "9879877",
+      "directCost": 26000,
+      "costOfItems": 11000,
+      "mesima": "אימון חטיבה",
+      "serviceType": "קבע",
+      "forceType": "חש\"ן",
+      "variationPastYear": 8,
+      "dateBegin": "2026-05-10",
+      "dateEnd": "2026-05-25",
+      "unitId": "gdud-rotem",
+      "location": "מחנה סירקין",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1600 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 800, "unitCost": 18 },
+            { "name": "ציוד מטווחים", "quantity": 400, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        },
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 20, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבה",
+      "codeShibutz": "9879878",
+      "directCost": 26000,
+      "costOfItems": 11000,
+      "mesima": "אימון חטיבה",
+      "serviceType": "קבע",
+      "forceType": "חש\"ן",
+      "variationPastYear": 8,
+      "dateBegin": "2026-01-10",
+      "dateEnd": "2026-01-25",
+      "unitId": "gdud-rotem",
+      "location": "מחנה פלוגות",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1600 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 800, "unitCost": 18 },
+            { "name": "ציוד מטווחים", "quantity": 400, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        },
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 20, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבה",
+      "codeShibutz": "9879879",
+      "directCost": 26000,
+      "costOfItems": 11000,
+      "mesima": "אימון חטיבה",
+      "serviceType": "קבע",
+      "forceType": "חש\"ן",
+      "variationPastYear": 8,
+      "dateBegin": "2026-11-10",
+      "dateEnd": "2026-11-25",
+      "unitId": "gdud-rotem",
+      "location": "פילון",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1600 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 800, "unitCost": 18 },
+            { "name": "ציוד מטווחים", "quantity": 400, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        },
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 20, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבה",
+      "codeShibutz": "9879880",
+      "directCost": 26000,
+      "costOfItems": 11000,
+      "mesima": "אימון חטיבה",
+      "serviceType": "קבע",
+      "forceType": "חש\"ן",
+      "variationPastYear": 8,
+      "dateBegin": "2026-02-10",
+      "dateEnd": "2026-02-25",
+      "unitId": "gdud-rotem",
+      "location": "צריפין",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1600 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 800, "unitCost": 18 },
+            { "name": "ציוד מטווחים", "quantity": 400, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מקלע", "quantity": 50, "unitCost": 500 },
+            { "name": "טנק", "quantity": 5, "unitCost": 5000 },
+            { "name": "תותח", "quantity": 10, "unitCost": 2800 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 },
+            { "name": "מוקש", "quantity": 100, "unitCost": 50 }
+          ]
+        },
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 20, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
+        }
+      ]
+    },
+    {
+      "title": "אימון חטיבה",
+      "codeShibutz": "9879881",
+      "directCost": 26000,
+      "costOfItems": 11000,
+      "mesima": "אימון חטיבה",
+      "serviceType": "קבע",
+      "forceType": "חש\"ן",
+      "variationPastYear": 8,
+      "dateBegin": "2026-08-10",
+      "dateEnd": "2026-08-25",
+      "unitId": "gdud-rotem",
+      "location": "מחנה קבע 98",
+      "resources": [
+        {
+          "categoryName": "הפשרות",
+          "items": [{ "name": "הפשרות", "quantity": 12, "unitCost": 1600 }]
+        },
+        {
+          "categoryName": "סטיקלייט",
+          "items": [
+            { "name": "ציוד אישי", "quantity": 800, "unitCost": 18 },
+            { "name": "ציוד מטווחים", "quantity": 400, "unitCost": 8 }
+          ]
+        },
+        {
+          "categoryName": "הובלות",
+          "items": [
+            { "name": "משאיות", "quantity": 300, "unitCost": 180 },
+            { "name": "גרר", "quantity": 25, "unitCost": 950 }
+          ]
+        },
+        {
+          "categoryName": "תחמושת",
+          "items": [
+            {
+              "name": "כד’ 5.56 מ”מ",
+              "quantity": 1200,
+              "unitCost": 1.5
+            },
+            { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
+            { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
+            { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
+            { "name": "מאג", "quantity": 100, "unitCost": 130 },
+            { "name": "טיל נ\"ט", "quantity": 20, "unitCost": 1500 }
+          ]
+        },
+        {
+          "categoryName": "ימ\"מ",
+          "items": [{ "name": "ימי מילואים", "quantity": 20, "unitCost": 400 }]
+        },
+        {
+          "categoryName": "מאמנים",
+          "items": [{ "name": "מאמנים", "quantity": 20, "unitCost": 75 }]
         }
       ]
     }
