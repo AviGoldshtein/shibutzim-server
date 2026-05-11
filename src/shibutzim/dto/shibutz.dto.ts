@@ -11,6 +11,9 @@ export class ShibutzDto {
   @ApiProperty({ example: "SHB001" })
   codeShibutz: string;
 
+  @ApiProperty({example : "הכשרה"})
+  domain: string
+
   @ApiProperty({ example: "אימון הקמה גדודי" })
   mesima: string;
 

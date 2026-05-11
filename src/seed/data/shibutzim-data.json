@@ -13,15 +13,12 @@
       "dateEnd": "2026-01-12",
       "unitId": "givati",
       "location": "צריפין",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -70,6 +67,7 @@
       "dateEnd": "2026-03-10",
       "unitId": "gdud-tzabar",
       "location": "גולני",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -105,6 +103,7 @@
       "dateEnd": "2026-03-15",
       "unitId": "gdud-rotem",
       "location": "מחנה דוד",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -150,6 +149,7 @@
       "dateEnd": "2026-04-20",
       "unitId": "gdud-orev",
       "location": "מחנה עופר",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -200,6 +200,7 @@
       "dateEnd": "2026-06-01",
       "unitId": "mahlaka-1",
       "location": "מחנה שיזפון",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -237,6 +238,7 @@
       "dateEnd": "2026-11-25",
       "unitId": "plugat-gimel",
       "location": "מחנה שיזפון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הובלות",
@@ -269,6 +271,7 @@
       "dateEnd": "2026-07-25",
       "unitId": "gdud-rotem",
       "location": "מחנה דוד",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -291,11 +294,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -329,6 +328,7 @@
       "dateEnd": "2026-05-07",
       "unitId": "plugat-zayin",
       "location": "פילון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "ימ\"מ",
@@ -363,6 +363,7 @@
       "dateEnd": "2026-09-14",
       "unitId": "plugat-vav",
       "location": "מחנה דוד",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הובלות",
@@ -386,6 +387,7 @@
       "dateEnd": "2026-08-10",
       "unitId": "mahlaka-8",
       "location": "צריפין",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "תחמושת",
@@ -410,6 +412,7 @@
       "dateEnd": "2026-10-20",
       "unitId": "plugat-gimel",
       "location": "מחנה עופר",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "תחמושת",
@@ -450,15 +453,12 @@
       "dateEnd": "2026-09-15",
       "unitId": "gdud-rotem",
       "location": "מחנה קבע 98",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 50,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 50, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 200, "unitCost": 8 },
             { "name": "רימון יד מס’ 4", "quantity": 100, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 50, "unitCost": 3 },
@@ -481,6 +481,7 @@
       "dateEnd": "2026-12-31",
       "unitId": "givati",
       "location": "מחנה שיזפון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "תחמושת",
@@ -519,6 +520,7 @@
       "dateEnd": "2026-12-31",
       "unitId": "gdud-rotem",
       "location": "מחנה קבע 98",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "תחמושת",
@@ -562,6 +564,7 @@
       "dateEnd": "2026-11-29",
       "unitId": "gdud-rotem",
       "location": "מחנה דוד",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "ימ\"מ",
@@ -570,11 +573,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -611,6 +610,7 @@
       "dateEnd": "2026-03-28",
       "unitId": "givati",
       "location": "גולני",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "ק\"מ",
@@ -656,6 +656,7 @@
       "dateEnd": "2026-01-25",
       "unitId": "plugat-gimel",
       "location": "מחנה סירקין",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -685,6 +686,7 @@
       "dateEnd": "2026-05-25",
       "unitId": "plugat-gimel",
       "location": "מחנה סירקין",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -720,6 +722,7 @@
       "dateEnd": "2026-02-28",
       "unitId": "givati",
       "location": "גולני",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "ק\"מ",
@@ -768,6 +771,7 @@
       "dateEnd": "2026-06-30",
       "unitId": "gdud-tzabar",
       "location": "מחנה פלוגות",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "תחמושת",
@@ -800,6 +804,7 @@
       "dateEnd": "2026-03-31",
       "unitId": "mahlaka-8",
       "location": "פילון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הובלות",
@@ -838,6 +843,7 @@
       "dateEnd": "2026-04-30",
       "unitId": "mahlaka-8",
       "location": "פילון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -885,6 +891,7 @@
       "dateEnd": "2026-10-31",
       "unitId": "mahlaka-8",
       "location": "פילון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -923,6 +930,7 @@
       "dateEnd": "2026-05-31",
       "unitId": "mahlaka-8",
       "location": "פילון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -969,6 +977,7 @@
       "dateEnd": "2026-08-01",
       "unitId": "mahlaka-1",
       "location": "מחנה שיזפון",
+      "domain": "הכשרה",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -1006,6 +1015,7 @@
       "dateEnd": "2026-10-25",
       "unitId": "plugat-gimel",
       "location": "מחנה שיזפון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הובלות",
@@ -1038,6 +1048,7 @@
       "dateEnd": "2026-05-25",
       "unitId": "gdud-rotem",
       "location": "מחנה סירקין",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -1060,11 +1071,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -1095,6 +1102,7 @@
       "dateEnd": "2026-01-25",
       "unitId": "gdud-rotem",
       "location": "מחנה פלוגות",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -1117,11 +1125,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -1155,6 +1159,7 @@
       "dateEnd": "2026-11-25",
       "unitId": "gdud-rotem",
       "location": "פילון",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -1177,11 +1182,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -1212,6 +1213,7 @@
       "dateEnd": "2026-02-25",
       "unitId": "gdud-rotem",
       "location": "צריפין",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -1234,11 +1236,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },
@@ -1272,6 +1270,7 @@
       "dateEnd": "2026-08-25",
       "unitId": "gdud-rotem",
       "location": "מחנה קבע 98",
+      "domain": "אימון",
       "resources": [
         {
           "categoryName": "הפשרות",
@@ -1294,11 +1293,7 @@
         {
           "categoryName": "תחמושת",
           "items": [
-            {
-              "name": "כד’ 5.56 מ”מ",
-              "quantity": 1200,
-              "unitCost": 1.5
-            },
+            { "name": "כד’ 5.56 מ”מ", "quantity": 1200, "unitCost": 1.5 },
             { "name": "כד’ 7.62 מ”מ", "quantity": 20, "unitCost": 80 },
             { "name": "רימון יד מס’ 4", "quantity": 500, "unitCost": 2 },
             { "name": "רימון יד מס’ 20", "quantity": 200, "unitCost": 3 },

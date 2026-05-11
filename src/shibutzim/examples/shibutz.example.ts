@@ -3,6 +3,7 @@ export const SHIBUTZ_EXAMPLE = [
     id: "b5831de0-b3a2-4598-adf7-2cf91f0a9897",
     title: "אימון הקמה",
     codeShibutz: "12345679",
+    domain: "הכשרה",
     mesima: "אימון הקמה גדודי",
     directCost: "15000.00",
     costOfItems: "6000.00",
