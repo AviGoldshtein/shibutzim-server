@@ -188,6 +188,7 @@ export class ShibutzimService {
       title: shibutz.title,
       codeShibutz: shibutz.codeShibutz,
       mesima: shibutz.mesima,
+      domain: shibutz.domain,
 
       dateBegin: shibutz.dateBegin,
       dateEnd: shibutz.dateEnd,
