@@ -27,6 +27,9 @@ export class Shibutz {
   codeShibutz: string;
 
   @Column()
+  domain : string
+
+  @Column()
   mesima: string;
 
   // Financial data

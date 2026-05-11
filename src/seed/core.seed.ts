@@ -77,6 +77,7 @@ export async function seedCore(dataSource: DataSource) {
     const shibutz = shibutzRepo.create({
       title: shibutzData.title,
       codeShibutz: shibutzData.codeShibutz,
+      domain: shibutzData.domain,
       directCost: shibutzData.directCost,
       costOfItems: shibutzData.costOfItems,
       mesima: shibutzData.mesima,
