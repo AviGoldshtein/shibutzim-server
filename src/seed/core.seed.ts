@@ -1,15 +1,15 @@
-import { Shibutz } from "../shibutzim/entities/shibutz.entity";
-import { Resource } from "../shibutzim/entities/resource.entity";
-import { Item } from "../shibutzim/entities/item.entity";
-import { UnitNode } from "../filters/entities/unit-node.entity";
-import { Location } from "../filters/entities/location.entity";
-import { ResourceType } from "../filters/entities/resource-type.entity";
-import { ServiceType } from "../filters/entities/service-type.entity";
-import { ItemType } from "../filters/entities/item-type.entity";
-import { ForceType } from "../filters/entities/force-type.entity";
+import { DataSource } from 'typeorm';
 
-import data from "./data/shibutzim-data.json";
-import { DataSource } from "typeorm";
+import { ForceType } from '../filters/entities/force-type.entity';
+import { ItemType } from '../filters/entities/item-type.entity';
+import { Location } from '../filters/entities/location.entity';
+import { ResourceType } from '../filters/entities/resource-type.entity';
+import { ServiceType } from '../filters/entities/service-type.entity';
+import { UnitNode } from '../filters/entities/unit-node.entity';
+import { Item } from '../shibutzim/entities/item.entity';
+import { Resource } from '../shibutzim/entities/resource.entity';
+import { Shibutz } from '../shibutzim/entities/shibutz.entity';
+import data from './data/shibutzim-data.json';
 
 export async function seedCore(dataSource: DataSource) {
   const unitRepo = dataSource.getRepository(UnitNode);
@@ -23,36 +23,37 @@ export async function seedCore(dataSource: DataSource) {
   const forceRepo = dataSource.getRepository(ForceType);
 
   // 🧠 טוענים הכל מראש (פעם אחת בלבד)
-  const [units, locations, resourceTypes, serviceTypes, itemTypes, forceTypes] = await Promise.all([
-    unitRepo.find(),
-    locationRepo.find(),
-    resourceTypeRepo.find(),
-    serviceTypeRepo.find(),
-    itemTypeRepo.find(),
-    forceRepo.find()
-  ]);
+  const [units, locations, resourceTypes, serviceTypes, itemTypes, forceTypes] =
+    await Promise.all([
+      unitRepo.find(),
+      locationRepo.find(),
+      resourceTypeRepo.find(),
+      serviceTypeRepo.find(),
+      itemTypeRepo.find(),
+      forceRepo.find(),
+    ]);
 
   // 🗺️ maps
   const unitMap = new Map(units.map((u) => [u.id, u]));
   const locationMap = new Map(locations.map((l) => [l.name, l.id]));
-  const resourceTypeMap = new Map(resourceTypes.map(r => [r.name, r.id]));
-  const serviceTypeMap = new Map(serviceTypes.map(s => [s.name, s.id]));
-  const itemTypeMap = new Map(itemTypes.map(i => [i.name, i.id]));
-  const forceTypeMap = new Map(forceTypes.map(f => [f.name, f.id]));
+  const resourceTypeMap = new Map(resourceTypes.map((r) => [r.name, r.id]));
+  const serviceTypeMap = new Map(serviceTypes.map((s) => [s.name, s.id]));
+  const itemTypeMap = new Map(itemTypes.map((i) => [i.name, i.id]));
+  const forceTypeMap = new Map(forceTypes.map((f) => [f.name, f.id]));
 
   for (const shibutzData of data.shibutzim) {
     const unit = unitMap.get(shibutzData.unitId);
     if (!unit) {
       console.warn(
-        `⚠️ Unit with id ${shibutzData.unitId} not found. Skipping ${shibutzData.title}`
+        `⚠️ Unit with id ${shibutzData.unitId} not found. Skipping ${shibutzData.title}`,
       );
       continue;
     }
 
-    const locationId = locationMap.get(shibutzData.location!);
+    const locationId = locationMap.get(shibutzData.location);
     if (!locationId) {
       console.warn(
-        `⚠️ Location "${shibutzData.location}" not found. Skipping ${shibutzData.title}`
+        `⚠️ Location "${shibutzData.location}" not found. Skipping ${shibutzData.title}`,
       );
       continue;
     }
@@ -60,7 +61,7 @@ export async function seedCore(dataSource: DataSource) {
     const serviceTypeId = serviceTypeMap.get(shibutzData.serviceType);
     if (!serviceTypeId) {
       console.warn(
-        `⚠️ ServiceType "${shibutzData.serviceType}" not found. Skipping ${shibutzData.title}`
+        `⚠️ ServiceType "${shibutzData.serviceType}" not found. Skipping ${shibutzData.title}`,
       );
       continue;
     }
@@ -68,7 +69,7 @@ export async function seedCore(dataSource: DataSource) {
     const forceTypeId = forceTypeMap.get(shibutzData.forceType);
     if (!forceTypeId) {
       console.warn(
-        `⚠️ ForceType "${shibutzData.forceType}" not found. Skipping ${shibutzData.title}`
+        `⚠️ ForceType "${shibutzData.forceType}" not found. Skipping ${shibutzData.title}`,
       );
       continue;
     }
@@ -98,7 +99,7 @@ export async function seedCore(dataSource: DataSource) {
 
       if (!resourceTypeId) {
         console.warn(
-          `⚠️ ResourceType "${resourceData.categoryName}" not found. Skipping resource in ${shibutzData.title}`
+          `⚠️ ResourceType "${resourceData.categoryName}" not found. Skipping resource in ${shibutzData.title}`,
         );
         continue;
       }
@@ -115,7 +116,7 @@ export async function seedCore(dataSource: DataSource) {
         const itemTypeId = itemTypeMap.get(itemData.name);
         if (!itemTypeId) {
           console.warn(
-            `⚠️ ItemType "${itemData.name}" not found. Skipping item in resource of ${shibutzData.title}`
+            `⚠️ ItemType "${itemData.name}" not found. Skipping item in resource of ${shibutzData.title}`,
           );
           continue;
         }
@@ -124,13 +125,13 @@ export async function seedCore(dataSource: DataSource) {
           quantity: itemData.quantity,
           unitCost: itemData.unitCost,
           resource,
-          itemTypeId
-        })
+          itemTypeId,
+        });
 
-        await itemRepo.save(item)
+        await itemRepo.save(item);
       }
     }
   }
 
-  console.log("✅ Core shibutzim seeded successfully");
-} 
+  console.log('✅ Core shibutzim seeded successfully');
+}

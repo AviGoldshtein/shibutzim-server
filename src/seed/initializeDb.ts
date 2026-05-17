@@ -1,8 +1,6 @@
-import { AppDataSource } from "./data-source";
-
-import { seedStatic } from "./static.seed";
-import { seedCore } from "./core.seed";
-
+import { seedCore } from './core.seed';
+import { AppDataSource } from './data-source';
+import { seedStatic } from './static.seed';
 
 async function initializeDb() {
   // connect to the database
@@ -16,17 +14,17 @@ async function initializeDb() {
   await dataSource.dropDatabase();
   await dataSource.synchronize();
 
-  console.log("✅ Database dropped and synchronized");
+  console.log('✅ Database dropped and synchronized');
 
   // seed static data - static schema
-  console.log("⏳ Seeding static data...");
+  console.log('⏳ Seeding static data...');
   await seedStatic(dataSource);
 
   // seed core data - core schema
-  console.log("⏳ Seeding core data...");
+  console.log('⏳ Seeding core data...');
   await seedCore(dataSource);
 
-  console.log("✅ Full seed completed");
+  console.log('✅ Full seed completed');
 
   process.exit();
 }

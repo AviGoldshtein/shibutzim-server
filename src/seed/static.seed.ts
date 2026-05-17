@@ -1,17 +1,17 @@
-import { DataSource } from "typeorm";
-import { ResourceType } from "../filters/entities/resource-type.entity";
-import { ServiceType } from "../filters/entities/service-type.entity";
-import { UnitNode } from "../filters/entities/unit-node.entity";
-import { Location } from "../filters/entities/location.entity";
-import { ItemType } from "../filters/entities/item-type.entity";
-import { ForceType } from "../filters/entities/force-type.entity";
+import { DataSource } from 'typeorm';
 
-import resourceTypes from "./data/resource-types.json";
-import itemTypes from "./data/item-types.json";
-import forceTypes from "./data/force-types.json";
-import serviceTypes from "./data/service-types.json";
-import unitsTree from "./data/units-tree-data.json";
-import locations from "./data/locations.json";
+import { ForceType } from '../filters/entities/force-type.entity';
+import { ItemType } from '../filters/entities/item-type.entity';
+import { Location } from '../filters/entities/location.entity';
+import { ResourceType } from '../filters/entities/resource-type.entity';
+import { ServiceType } from '../filters/entities/service-type.entity';
+import { UnitNode } from '../filters/entities/unit-node.entity';
+import forceTypes from './data/force-types.json';
+import itemTypes from './data/item-types.json';
+import locations from './data/locations.json';
+import resourceTypes from './data/resource-types.json';
+import serviceTypes from './data/service-types.json';
+import unitsTree from './data/units-tree-data.json';
 
 export async function seedStatic(dataSource: DataSource) {
   const resourceRepo = dataSource.getRepository(ResourceType);
@@ -24,26 +24,22 @@ export async function seedStatic(dataSource: DataSource) {
 
   // Resource Types
   const resourceEntities = resourceTypes.map((name) =>
-    resourceRepo.create({ name })
+    resourceRepo.create({ name }),
   );
   await resourceRepo.save(resourceEntities);
 
   // Item Types
-  const itemEntities = itemTypes.map((name) =>
-    itemRepo.create({ name })
-  );
+  const itemEntities = itemTypes.map((name) => itemRepo.create({ name }));
   await itemRepo.save(itemEntities);
 
   // Service Types
   const serviceEntities = serviceTypes.map((name) =>
-    serviceRepo.create({ name })
+    serviceRepo.create({ name }),
   );
   await serviceRepo.save(serviceEntities);
 
   // Force Types
-  const forceEntities = forceTypes.map((name) =>
-    forceRepo.create({ name })
-  );
+  const forceEntities = forceTypes.map((name) => forceRepo.create({ name }));
   await forceRepo.save(forceEntities);
 
   // Locations
@@ -52,7 +48,7 @@ export async function seedStatic(dataSource: DataSource) {
       name: loc.name,
       baseType: loc.baseType,
       region: loc.region,
-    })
+    }),
   );
 
   await locationRepo.save(locationEntities);
@@ -60,7 +56,7 @@ export async function seedStatic(dataSource: DataSource) {
   // Units Tree (recursive)
   async function insertNode(
     node: any,
-    parent: UnitNode | null = null
+    parent: UnitNode | null = null,
   ): Promise<UnitNode> {
     const entity = unitRepo.create({
       id: node.id,
@@ -83,5 +79,5 @@ export async function seedStatic(dataSource: DataSource) {
     await insertNode(root, null);
   }
 
-  console.log("✅ Static data seeded");
+  console.log('✅ Static data seeded');
 }

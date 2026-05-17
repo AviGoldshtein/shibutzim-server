@@ -1,15 +1,15 @@
-import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
-import { CommonCacheModule } from './common/cache/common-cache.module';
-import { ConfigModule, ConfigService } from "@nestjs/config";
-import { TypeOrmModule } from "@nestjs/typeorm";
-import { ScheduleModule } from "@nestjs/schedule";
+import { MiddlewareConsumer, Module, NestModule } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
+import { ScheduleModule } from '@nestjs/schedule';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { ShibutzimModule } from "./shibutzim/shibutzim.module";
-import { FiltersModule } from "./filters/filters.module";
-import { DashboardModule } from "./dashboard/dashboard.module";
-import { RequestLoggerMiddleware } from "./common/middleware/request-logger.middleware";
-import configuration from "./config/configuration";
-import { envValidationSchema } from "./config/env.validation";
+import { CommonCacheModule } from './common/cache/common-cache.module';
+import { RequestLoggerMiddleware } from './common/middleware/request-logger.middleware';
+import configuration from './config/configuration';
+import { envValidationSchema } from './config/env.validation';
+import { DashboardModule } from './dashboard/dashboard.module';
+import { FiltersModule } from './filters/filters.module';
+import { ShibutzimModule } from './shibutzim/shibutzim.module';
 
 @Module({
   imports: [
@@ -19,8 +19,8 @@ import { envValidationSchema } from "./config/env.validation";
       load: [configuration],
       validationSchema: envValidationSchema,
       validationOptions: {
-        abortEarly: false
-      }
+        abortEarly: false,
+      },
     }),
 
     CommonCacheModule,
@@ -31,12 +31,12 @@ import { envValidationSchema } from "./config/env.validation";
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (configService: ConfigService) => ({
-        type: "postgres",
-        host: configService.get<string>("database.host"),
-        port: configService.get<number>("database.port"),
-        username: configService.get<string>("database.username"),
-        password: configService.get<string>("database.password"),
-        database: configService.get<string>("database.name"),
+        type: 'postgres',
+        host: configService.get<string>('database.host'),
+        port: configService.get<number>('database.port'),
+        username: configService.get<string>('database.username'),
+        password: configService.get<string>('database.password'),
+        database: configService.get<string>('database.name'),
         autoLoadEntities: true,
         synchronize: true,
       }),
@@ -49,6 +49,6 @@ import { envValidationSchema } from "./config/env.validation";
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer) {
-    consumer.apply(RequestLoggerMiddleware).forRoutes("*");
+    consumer.apply(RequestLoggerMiddleware).forRoutes('*');
   }
 }

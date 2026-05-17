@@ -1,9 +1,9 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class ForceTypeDto {
-  @ApiProperty({ example: "uuid" })
+  @ApiProperty({ example: 'uuid' })
   id: string;
 
-  @ApiProperty({ example: "חיר" })
+  @ApiProperty({ example: 'חיר' })
   name: string;
 }

@@ -1,17 +1,18 @@
-import { Injectable, Inject } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
-import type { Cache } from 'cache-manager';
+import { Inject, Injectable } from '@nestjs/common';
 import { Cron } from '@nestjs/schedule';
+import { InjectRepository } from '@nestjs/typeorm';
+import type { Cache } from 'cache-manager';
 import {
-  Repository,
-  TreeRepository,
   DataSource,
+  Repository,
   SelectQueryBuilder,
+  TreeRepository,
 } from 'typeorm';
+
 import { UnitNode } from '../filters/entities/unit-node.entity';
-import { Shibutz } from './entities/shibutz.entity';
 import { GetShibutzimDto } from './dto/get-shibutzim.dto';
+import { Shibutz } from './entities/shibutz.entity';
 
 @Injectable()
 export class ShibutzimService {

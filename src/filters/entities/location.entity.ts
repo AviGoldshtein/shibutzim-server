@@ -1,9 +1,10 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToMany } from "typeorm";
-import { Shibutz } from "../../shibutzim/entities/shibutz.entity";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity({ schema: "static" })
+import { Shibutz } from '../../shibutzim/entities/shibutz.entity';
+
+@Entity({ schema: 'static' })
 export class Location {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ unique: true })

@@ -1,9 +1,9 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class ResourceTypeDto {
-  @ApiProperty({ example: "uuid" })
+  @ApiProperty({ example: 'uuid' })
   id: string;
 
-  @ApiProperty({ example: "Vehicle" })
+  @ApiProperty({ example: 'Vehicle' })
   name: string;
 }

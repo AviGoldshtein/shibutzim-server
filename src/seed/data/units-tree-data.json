@@ -51,9 +51,7 @@
               {
                 "id": "mahlaka-4",
                 "label": "מחלקה 4",
-                "children": [
-                  { "id": "kita-41", "label": "כיתה 41" }
-                ]
+                "children": [{ "id": "kita-41", "label": "כיתה 41" }]
               }
             ]
           }
@@ -84,9 +82,7 @@
               {
                 "id": "mahlaka-6",
                 "label": "מחלקה 6",
-                "children": [
-                  { "id": "kita-61", "label": "כיתה 61" }
-                ]
+                "children": [{ "id": "kita-61", "label": "כיתה 61" }]
               }
             ]
           }
@@ -123,9 +119,7 @@
               {
                 "id": "mahlaka-8",
                 "label": "מחלקה 8",
-                "children": [
-                  { "id": "kita-81", "label": "כיתה 81" }
-                ]
+                "children": [{ "id": "kita-81", "label": "כיתה 81" }]
               }
             ]
           }

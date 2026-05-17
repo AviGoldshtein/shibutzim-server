@@ -1,22 +1,23 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
   Column,
+  Entity,
+  Index,
+  JoinColumn,
   ManyToOne,
   OneToMany,
-  JoinColumn,
-  Index,
-} from "typeorm";
-import { UnitNode } from "../../filters/entities/unit-node.entity";
-import { Resource } from "./resource.entity";
-import { Location } from "../../filters/entities/location.entity";
-import { ServiceType } from "../../filters/entities/service-type.entity";
-import { ForceType } from "../../filters/entities/force-type.entity";
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
-@Entity({ schema: "core" })
+import { ForceType } from '../../filters/entities/force-type.entity';
+import { Location } from '../../filters/entities/location.entity';
+import { ServiceType } from '../../filters/entities/service-type.entity';
+import { UnitNode } from '../../filters/entities/unit-node.entity';
+import { Resource } from './resource.entity';
+
+@Entity({ schema: 'core' })
 export class Shibutz {
   // Primary identifier
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   // Basic details
@@ -27,64 +28,64 @@ export class Shibutz {
   codeShibutz: string;
 
   @Column()
-  domain : string
+  domain: string;
 
   @Column()
   mesima: string;
 
   // Financial data
-  @Column("decimal", { precision: 10, scale: 2 })
+  @Column('decimal', { precision: 10, scale: 2 })
   directCost: number;
 
-  @Column("decimal", { precision: 10, scale: 2 })
+  @Column('decimal', { precision: 10, scale: 2 })
   costOfItems: number;
 
-  @Column("decimal", { precision: 10, scale: 2 })
+  @Column('decimal', { precision: 10, scale: 2 })
   variationPastYear: number;
 
   // Date range
-  @Column({ type: "date" })
+  @Column({ type: 'date' })
   dateBegin: string;
 
-  @Column({ type: "date" })
+  @Column({ type: 'date' })
   dateEnd: string;
 
   // Service relation
   @ManyToOne(() => ServiceType, { eager: false })
-  @JoinColumn({ name: "serviceTypeId" })
+  @JoinColumn({ name: 'serviceTypeId' })
   serviceType: ServiceType;
 
   @Index()
-  @Column({ name: "serviceTypeId" })
+  @Column({ name: 'serviceTypeId' })
   serviceTypeId: string;
 
   // Unit relation
   @ManyToOne(() => UnitNode, { eager: false })
-  @JoinColumn({ name: "unitNodeId" })
+  @JoinColumn({ name: 'unitNodeId' })
   unitNode: UnitNode;
 
   @Index()
-  @Column({ name: "unitNodeId" })
+  @Column({ name: 'unitNodeId' })
   unitNodeId: string;
 
   // Force relation
   @ManyToOne(() => ForceType, { eager: false })
-  @JoinColumn({ name: "forceTypeId" })
+  @JoinColumn({ name: 'forceTypeId' })
   forceType: ForceType;
 
   @Index()
-  @Column({ name: "forceTypeId" })
+  @Column({ name: 'forceTypeId' })
   forceTypeId: string;
 
   // Location relation
   @ManyToOne(() => Location, (location) => location.shibutzim, {
     eager: false,
   })
-  @JoinColumn({ name: "locationId" })
+  @JoinColumn({ name: 'locationId' })
   location: Location;
 
   @Index()
-  @Column({ name: "locationId" })
+  @Column({ name: 'locationId' })
   locationId: string;
 
   // Resources relation

@@ -58,7 +58,6 @@ docker compose up -d
 
 המערכת כרגע תלויה בדאטה התחלתי כדי לעבוד בצורה תקינה.
 
-
 ```bash
 npm run initdb
 ```
@@ -103,34 +102,33 @@ src/
 
 ## 🔧 פקודות שימושיות
 
-| פקודה | תיאור |
-|---|---|
+| פקודה               | תיאור                    |
+| ------------------- | ------------------------ |
 | `npm run start:dev` | הפעלת סרבר NestJS בפיתוח |
-| `npm run build` | בניית הפרויקט לפרודקשן |
-| `npm run lint` | בדיקת קוד עם ESLint |
-| `npm run test` | הרצת Unit Tests |
-| `npm run initdb` | אתחול DB עם דוגמת PoC |
+| `npm run build`     | בניית הפרויקט לפרודקשן   |
+| `npm run lint`      | בדיקת קוד עם ESLint      |
+| `npm run test`      | הרצת Unit Tests          |
+| `npm run initdb`    | אתחול DB עם דוגמת PoC    |
 
 ---
- 
+
 ## 🔐 משתני סביבה
- 
+
 צור קובץ `.env` בתיקיית הפרויקט והגדר את הערכים הבאים:
- 
+
 ```dotenv
 SERVER_PORT=3000
- 
+
 DB_HOST=localhost
 DB_PORT=5432
 DB_USERNAME=my_username
 DB_PASSWORD=my_password
 DB_NAME=my_db
 ```
- 
+
 > ודא שהקובץ `.env` מופיע ב־`.gitignore` ואינו מועלה ל־Git.
- 
+
 ---
- 
 
 ## ✅ Best Practices
 

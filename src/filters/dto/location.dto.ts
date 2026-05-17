@@ -1,15 +1,15 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class LocationDto {
-  @ApiProperty({ example: "uuid" })
+  @ApiProperty({ example: 'uuid' })
   id: string;
 
-  @ApiProperty({ example: "Bahad 1" })
+  @ApiProperty({ example: 'Bahad 1' })
   name: string;
 
-  @ApiProperty({ example: "Training Base", required: false })
+  @ApiProperty({ example: 'Training Base', required: false })
   baseType?: string;
 
-  @ApiProperty({ example: "South", required: false })
+  @ApiProperty({ example: 'South', required: false })
   region?: string;
 }

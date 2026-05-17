@@ -1,15 +1,15 @@
-import { Injectable, Inject } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
 import { CACHE_MANAGER } from '@nestjs/cache-manager';
+import { Inject, Injectable } from '@nestjs/common';
+import { InjectRepository } from '@nestjs/typeorm';
 import type { Cache } from 'cache-manager';
 import { Repository } from 'typeorm';
 
+import { ForceType } from './entities/force-type.entity';
+import { ItemType } from './entities/item-type.entity';
+import { Location } from './entities/location.entity';
 import { ResourceType } from './entities/resource-type.entity';
 import { ServiceType } from './entities/service-type.entity';
 import { UnitNode } from './entities/unit-node.entity';
-import { Location } from './entities/location.entity';
-import { ItemType } from './entities/item-type.entity';
-import { ForceType } from './entities/force-type.entity';
 
 @Injectable()
 export class FiltersService {

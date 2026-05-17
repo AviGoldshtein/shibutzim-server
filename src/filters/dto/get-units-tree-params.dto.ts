@@ -1,9 +1,9 @@
-import { ApiProperty } from "@nestjs/swagger";
+import { ApiProperty } from '@nestjs/swagger';
 
 export class GetUnitsTreeParamsDto {
   @ApiProperty({
-    description: "Soldier ID",
-    example: "s12345",
+    description: 'Soldier ID',
+    example: 's12345',
   })
   idSoldier: string;
 }

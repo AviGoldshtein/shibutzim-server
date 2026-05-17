@@ -1,14 +1,14 @@
 import {
+  Column,
   Entity,
   PrimaryColumn,
-  Column,
   Tree,
   TreeChildren,
   TreeParent,
-} from "typeorm";
+} from 'typeorm';
 
-@Entity({ schema: "static" })
-@Tree("closure-table")
+@Entity({ schema: 'static' })
+@Tree('closure-table')
 export class UnitNode {
   @PrimaryColumn()
   id: string;

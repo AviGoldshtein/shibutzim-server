@@ -1,22 +1,23 @@
 import {
-  Entity,
-  PrimaryGeneratedColumn,
   Column,
+  Entity,
+  JoinColumn,
   ManyToOne,
   OneToMany,
-  JoinColumn,
-} from "typeorm";
-import { Shibutz } from "./shibutz.entity";
-import { Item } from "./item.entity";
-import { ResourceType } from "../../filters/entities/resource-type.entity";
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
-@Entity({ schema: "core" })
+import { ResourceType } from '../../filters/entities/resource-type.entity';
+import { Item } from './item.entity';
+import { Shibutz } from './shibutz.entity';
+
+@Entity({ schema: 'core' })
 export class Resource {
-  @PrimaryGeneratedColumn("uuid")
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @ManyToOne(() => ResourceType, { eager: true })
-  @JoinColumn({ name: "resourceTypeId" })
+  @JoinColumn({ name: 'resourceTypeId' })
   resourceType: ResourceType;
 
   @Column()

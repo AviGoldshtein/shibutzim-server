@@ -1,8 +1,8 @@
-import { Global, Module } from '@nestjs/common';
 import { CacheModule } from '@nestjs/cache-manager';
+import { Global, Module } from '@nestjs/common';
 import { redisStore } from 'cache-manager-redis-yet';
 
-@Global() 
+@Global()
 @Module({
   imports: [
     CacheModule.registerAsync({
@@ -14,6 +14,6 @@ import { redisStore } from 'cache-manager-redis-yet';
       }),
     }),
   ],
-  exports: [CacheModule], 
+  exports: [CacheModule],
 })
 export class CommonCacheModule {}
